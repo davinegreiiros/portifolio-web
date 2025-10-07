@@ -7,9 +7,9 @@ const PROJECTS = [
     tech: 'Flutter, BLoC, Firebase'
   },
   {
-    title: 'Office Notices Screen (UI + Animações)',
-    desc: 'Implementação de tela de avisos com animações e contadores de lidos/não lidos.',
-    tech: 'Flutter, animações customizadas'
+    title: 'Agendamento Pet Mobile',
+    desc: 'Aplicativo mobile para agendamento de serviços pet, permitindo cadastro de pets, agendamento de horários, notificações e integração com backend. Projeto disponível em: https://github.com/davinegreiiros/agendamento-app-pet',
+    tech: 'Flutter, Firebase, Bloc, API-REST'
   },
   {
     title: 'Chess System Java',
