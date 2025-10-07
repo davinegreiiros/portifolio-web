@@ -1,13 +1,7 @@
-# Portfolio React + Vite — Davi Negreiros
+# Portfolio — Davi Negreiros
 
-Esse projeto foi gerado automaticamente e está pronto para deploy no Netlify ou Vercel.
+Este projeto apresenta o portfólio profissional de Davi Negreiros, destacando experiências, habilidades, projetos e trajetória na área de tecnologia.
 
-## Como usar localmente
-1. Instale dependências: `npm install`
-2. Rodar em dev: `npm run dev`
-3. Build: `npm run build`
-4. Preview do build: `npm run preview`
+Explore as seções para conhecer mais sobre minha atuação como desenvolvedor, principais tecnologias utilizadas, experiências profissionais e projetos realizados.
 
-## Deploy
-- No Vercel: importe o repositório e use a build command `npm run build` e o diretório `dist`.
-- No Netlify: conectar o repositório e usar build command `npm run build` e publish directory `dist`.
+Acesse o portfólio para visualizar detalhes sobre minha carreira e competências técnicas.
