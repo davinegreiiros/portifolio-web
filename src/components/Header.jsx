@@ -16,7 +16,7 @@ export default function Header(){
       </nav>
       <div className="hero-content">
         <h1>Olá — eu sou <span className="accent">Davi Negreiros</span></h1>
-        <p>Flutter Developer | QA | Mobile & Web | Unimed Fortaleza</p>
+        <p>Flutter Developer | QA | Mobile & Web </p>
         <div className="cta">
           <a className="btn" href="#projects">Ver projetos</a>
           <a className="btn ghost" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noreferrer">LinkedIn</a>

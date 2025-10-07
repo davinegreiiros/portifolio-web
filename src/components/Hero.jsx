@@ -1,5 +1,44 @@
+import React from 'react'
+
+export default function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Davi Negreiros</h1>
+        <p>Desenvolvedor Flutter & QA | Fortaleza, CE</p>
+        <div className="hero-buttons">
+          <a
+            href="#projects"
+            className="btn btn-primary"
+          >
+            Ver projetos
+          </a>
+          <a
+            href="https://www.linkedin.com/in/davinegreiiros/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-linkedin"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="/Davi_Negreiros_CV.pdf"
+            download
+            className="btn btn-download"
+          >
+            <span role="img" aria-label="download" style={{marginRight: 6}}>⬇️</span>
+            Baixar CV
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Adicione este CSS ao seu arquivo global ou ao Hero.module.css
+/*
 .hero {
-  padding-top: 60px;
+  padding-top: 60px; // reduzido para mostrar mais conteúdo
   padding-bottom: 40px;
   display: flex;
   align-items: center;
@@ -82,3 +121,4 @@
     gap: 10px;
   }
 }
+*/
