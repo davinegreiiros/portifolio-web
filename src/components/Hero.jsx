@@ -22,7 +22,7 @@ export default function Hero() {
             LinkedIn
           </a>
           <a
-            href="/Davi_Negreiros_CV.pdf"
+            href="/Profile.pdf"
             download
             className="btn btn-download"
           >
