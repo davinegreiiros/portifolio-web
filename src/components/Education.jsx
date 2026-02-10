@@ -2,9 +2,9 @@ import React from 'react'
 
 const EDUCATION = [
   {
-    degree: 'Análise e Desenvolvimento de Sistemas',
-    institution: 'UNIFOR - Universidade de Fortaleza',
-    period: '2019 - 2022',
+    degree: 'Ciências da computação',
+    institution: 'Centro Universitario Farias Brito - FBUNI',
+    period: '2019 - 2025',
     description: 'Formação focada em desenvolvimento de software, arquitetura de sistemas e metodologias ágeis.'
   }
 ]

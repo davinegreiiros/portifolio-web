@@ -27,7 +27,7 @@ export default function Hero() {
 
         <p className="hero-description">
           Transformando ideias em aplicações mobile de alta performance.
-          Especialista em Flutter, testes automatizados e arquitetura limpa.
+          Desenvolvedor Flutter e QA, testes automatizados e arquitetura limpa.
         </p>
 
         <div className="hero-buttons">
@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="hero-stats">
           <div className="stat">
             <div className="stat-value">4+</div>
-            <div className="stat-label">Anos de Experiência</div>
+            <div className="stat-label">Anos de Experiência em Tecnologias</div>
           </div>
           <div className="stat">
             <div className="stat-value">47</div>

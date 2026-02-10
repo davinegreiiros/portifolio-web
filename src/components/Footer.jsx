@@ -8,7 +8,7 @@ export default function Footer(){
       <div className="footer-content">
         <div className="footer-brand">
           <span className="brand-icon">{'{ DN }'}</span>
-          <p>Desenvolvedor Flutter & QA Specialist</p>
+          <p>Desenvolvedor Flutter & QA </p>
         </div>
 
         <div className="footer-links">
