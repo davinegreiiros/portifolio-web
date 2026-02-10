@@ -22,7 +22,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero-subtitle">
-          Desenvolvedor Flutter & QA Specialist
+          Desenvolvedor Flutter & QA 
         </p>
 
         <p className="hero-description">
