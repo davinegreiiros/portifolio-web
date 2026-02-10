@@ -2,10 +2,10 @@ import React from 'react'
 
 const EDUCATION = [
   {
-    degree: 'Ciências da computação',
-    institution: 'Centro Universitario Farias Brito - FBUNI',
+    degree: 'Bacharelado em Ciências da Computação',
+    institution: 'Centro Universitário Farias Brito - FBUNI',
     period: '2019 - 2025',
-    description: 'Formação focada em desenvolvimento de software, arquitetura de sistemas e metodologias ágeis.'
+    description: 'Graduação completa com formação sólida em desenvolvimento de software, estruturas de dados, algoritmos, arquitetura de sistemas, banco de dados e engenharia de software. Experiência prática em metodologias ágeis e desenvolvimento full-stack.'
   }
 ]
 
