@@ -47,6 +47,9 @@
   onScroll();
 
   /* ---------- reveal on scroll ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  // marca os elementos ANTES de observar para pausar a animação CSS
+  revealEls.forEach((el) => el.classList.add('js-ready'));
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -55,7 +58,7 @@
     },
     { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
   );
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  revealEls.forEach((el) => io.observe(el));
 
   /* ---------- count-up stats ---------- */
   const countObs = new IntersectionObserver((entries) => {

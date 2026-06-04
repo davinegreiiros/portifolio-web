@@ -220,15 +220,21 @@ section { position: relative; padding: 110px 0; }
 }
 .sec-intro { color: var(--txt-2); max-width: 620px; font-size: 1.05rem; }
 
-/* reveal animation */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
-.reveal[data-d="1"] { transition-delay: .08s; }
-.reveal[data-d="2"] { transition-delay: .16s; }
-.reveal[data-d="3"] { transition-delay: .24s; }
-.reveal[data-d="4"] { transition-delay: .32s; }
+/* reveal animation — CSS-only, não depende de JS */
+@keyframes revealIn {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal { animation: revealIn .65s var(--ease) both; }
+.reveal[data-d="1"] { animation-delay: .08s; }
+.reveal[data-d="2"] { animation-delay: .18s; }
+.reveal[data-d="3"] { animation-delay: .28s; }
+.reveal[data-d="4"] { animation-delay: .38s; }
+/* quando JS está disponível, o IntersectionObserver pausa e retoma a animação */
+.reveal.js-ready { animation-play-state: paused; }
+.reveal.js-ready.in { animation-play-state: running; }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { animation: none; opacity: 1; transform: none; }
 }
 
 /* ============================================================
