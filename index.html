@@ -1,13 +1,426 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio — Davi Negreiros</title>
-    <link rel="icon" href="/favicon.ico" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Davi Negreiros — Desenvolvedor Mobile Flutter</title>
+<meta name="description" content="Davi Negreiros — Desenvolvedor Mobile Flutter com background em QA. Clean Architecture, BLoC, GraphQL. Fortaleza/CE." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+<div class="scanlines"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">DN</span>
+      <span class="brand-name">davi<b>negreiros</b></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#sobre"><span class="n">01</span><span data-pt="Sobre" data-en="About">Sobre</span></a>
+      <a href="#skills"><span class="n">02</span><span data-pt="Skills" data-en="Skills">Skills</span></a>
+      <a href="#experiencia"><span class="n">03</span><span data-pt="Experiência" data-en="Experience">Experiência</span></a>
+      <a href="#projetos"><span class="n">04</span><span data-pt="Projetos" data-en="Projects">Projetos</span></a>
+      <a href="#contato"><span class="n">05</span><span data-pt="Contato" data-en="Contact">Contato</span></a>
+    </nav>
+
+    <div class="nav-tools">
+      <div class="lang-toggle">
+        <button data-lang="pt" class="on">PT</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="icon-btn" href="https://github.com/davinegreiiros" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2C5.7 21.8 5 19.7 5 19.7c-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12c0-6.6-5.4-12-12-12z"/></svg>
+      </a>
+      <a class="btn btn-outline" href="uploads/Curriculo_Davi_Flutter_Vaga.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        <span class="cv-text" data-pt="Baixar CV" data-en="Download CV">Baixar CV</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="status reveal">
+          <span class="dot"></span>
+          <span data-pt="Disponível para novos projetos" data-en="Available for new projects">Disponível para novos projetos</span>
+        </div>
+        <p class="hero-kicker reveal" data-d="1"><span class="acc">//</span> <span data-pt="Desenvolvedor Mobile · Mobile &amp; QA" data-en="Mobile Developer · Mobile &amp; QA">Desenvolvedor Mobile · Mobile &amp; QA</span></p>
+        <h1 class="reveal" data-d="1">Davi<span class="sur gradient-text">Negreiros</span></h1>
+        <p class="hero-role reveal" data-d="2"><span class="acc">&gt;</span> <span class="typed"></span><span class="cursor"></span></p>
+        <p class="hero-desc reveal" data-d="2" data-pt="Transformo ideias em aplicações mobile de alta performance. Mais de 3 anos construindo apps Flutter em produção — com um diferencial raro: olhar de QA que garante qualidade desde a primeira linha." data-en="I turn ideas into high-performance mobile apps. 3+ years shipping production Flutter — with a rare edge: a QA mindset that bakes quality in from the very first line.">Transformo ideias em aplicações mobile de alta performance. Mais de 3 anos construindo apps Flutter em produção — com um diferencial raro: olhar de QA que garante qualidade desde a primeira linha.</p>
+
+        <div class="hero-cta reveal" data-d="3">
+          <a class="btn btn-primary" href="#projetos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span data-pt="Ver projetos" data-en="View projects">Ver projetos</span>
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.7 1.8-1.7 1.7.8 1.7 1.7-.7 1.8-1.7 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="hero-stats reveal" data-d="4">
+          <div class="stat">
+            <div class="v"><span class="acc" data-count="3" data-suffix="+">3+</span></div>
+            <div class="l" data-pt="anos em produção" data-en="years in production">anos em produção</div>
+          </div>
+          <div class="div"></div>
+          <div class="stat">
+            <div class="v"><span data-count="52" data-suffix="">52</span></div>
+            <div class="l" data-pt="repositórios públicos" data-en="public repositories">repositórios públicos</div>
+          </div>
+          <div class="div"></div>
+          <div class="stat">
+            <div class="v"><span class="acc">Dev+QA</span></div>
+            <div class="l" data-pt="o diferencial" data-en="the differential">o diferencial</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-aside reveal" data-d="2">
+        <div class="term term-lg">
+          <div class="barhead">
+            <span class="dots"><span></span><span></span><span></span></span>
+            <span class="fname">zsh — davi@portfolio</span>
+          </div>
+          <div class="term-body"></div>
+        </div>
+
+        <div class="now-card">
+          <span class="now-led"><span class="dot"></span></span>
+          <div>
+            <div class="now-k">// <span data-pt="atualmente" data-en="currently">atualmente</span></div>
+            <div class="now-v" data-pt="Desenvolvedor Flutter · Unimed Fortaleza via Unitech" data-en="Flutter Developer · Unimed Fortaleza via Unitech">Desenvolvedor Flutter · Unimed Fortaleza via Unitech</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">01</span> / <span data-pt="SOBRE" data-en="ABOUT">SOBRE</span></div>
+    <div class="about-grid">
+      <div>
+        <p class="about-lead reveal" data-d="1"
+           data-pt="Desenvolvedor Flutter que pensa como <span class='hl'>engenheiro de qualidade</span>. Construo apps multiplataforma para Android, iOS e Web — e testo cada um deles como se a vida do usuário dependesse disso."
+           data-en="A Flutter developer who thinks like a <span class='hl'>quality engineer</span>. I build cross-platform apps for Android, iOS and Web — and test each one as if a user's life depended on it.">
+          Desenvolvedor Flutter que pensa como <span class="hl">engenheiro de qualidade</span>. Construo apps multiplataforma para Android, iOS e Web — e testo cada um deles como se a vida do usuário dependesse disso.
+        </p>
+        <p class="about-body reveal" data-d="2"
+           data-pt="Mais de 3 anos atuando em produção e times ágeis multidisciplinares, com domínio em gerenciamento de estado (BLoC, Cubit, Riverpod), integração com APIs REST e GraphQL, testes unitários e de integração, e Clean Architecture. Experiência completa no ciclo mobile: builds, publicação nas lojas e CI/CD."
+           data-en="3+ years in production and cross-functional agile teams, with strong command of state management (BLoC, Cubit, Riverpod), REST &amp; GraphQL integration, unit &amp; integration testing, and Clean Architecture. Full mobile lifecycle: builds, store publishing and CI/CD.">
+          Mais de 3 anos atuando em produção e times ágeis multidisciplinares, com domínio em gerenciamento de estado (BLoC, Cubit, Riverpod), integração com APIs REST e GraphQL, testes unitários e de integração, e Clean Architecture. Experiência completa no ciclo mobile: builds, publicação nas lojas e CI/CD.
+        </p>
+        <p class="about-body reveal" data-d="2"
+           data-pt="Meu histórico em QA e automação de testes é o que me diferencia: atenção obsessiva à qualidade, usabilidade e performance — colaborando de perto com Backend, QA e UX."
+           data-en="My background in QA and test automation is what sets me apart: an obsessive attention to quality, usability and performance — collaborating closely with Backend, QA and UX.">
+          Meu histórico em QA e automação de testes é o que me diferencia: atenção obsessiva à qualidade, usabilidade e performance — colaborando de perto com Backend, QA e UX.
+        </p>
+      </div>
+
+      <div class="about-cards">
+        <div class="fact reveal" data-d="1">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>Dev + QA</h4>
+          <p data-pt="Qualidade desde a primeira linha de código." data-en="Quality from the very first line of code.">Qualidade desde a primeira linha de código.</p>
+        </div>
+        <div class="fact reveal" data-d="2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg></div>
+          <h4>HealthTech</h4>
+          <p data-pt="Alocado na Unimed Fortaleza via Unitech." data-en="Allocated at Unimed Fortaleza through Unitech.">Alocado na Unimed Fortaleza via Unitech.</p>
+        </div>
+        <div class="fact reveal" data-d="3">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div>
+          <h4>Clean Architecture</h4>
+          <p data-pt="BLoC, Cubit, Riverpod e código manutenível." data-en="BLoC, Cubit, Riverpod and maintainable code.">BLoC, Cubit, Riverpod e código manutenível.</p>
+        </div>
+        <div class="fact reveal" data-d="4">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="14" height="10" rx="1.5"/><rect x="17" y="7" width="5" height="13" rx="1.5"/><path d="M6 18h6"/></svg></div>
+          <h4>Multiplataforma</h4>
+          <p data-pt="Android · iOS · Web com uma base de código." data-en="Android · iOS · Web from one codebase.">Android · iOS · Web com uma base de código.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">02</span> / <span data-pt="STACK &amp; SKILLS" data-en="STACK &amp; SKILLS">STACK &amp; SKILLS</span></div>
+    <h2 class="sec-title reveal" data-d="1" data-pt="Ferramentas que uso todos os dias" data-en="Tools I work with every day">Ferramentas que uso todos os dias</h2>
+    <p class="sec-intro reveal" data-d="1" data-pt="Do widget ao pipeline — uma stack pensada para apps escaláveis e bem testados." data-en="From widget to pipeline — a stack built for scalable, well-tested apps." style="margin-bottom:40px">Do widget ao pipeline — uma stack pensada para apps escaláveis e bem testados.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal" data-d="1">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+          <div><h3 data-pt="Mobile" data-en="Mobile">Mobile</h3><span class="h-sub">// flutter &amp; dart</span></div>
+        </div>
+        <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Widgets responsivos</span><span class="chip">Play Store</span><span class="chip">App Store</span></div>
+      </div>
+
+      <div class="skill-card reveal" data-d="2">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></span>
+          <div><h3 data-pt="Estado &amp; Arquitetura" data-en="State &amp; Architecture">Estado &amp; Arquitetura</h3><span class="h-sub">// state</span></div>
+        </div>
+        <div class="chips"><span class="chip">BLoC</span><span class="chip">Cubit</span><span class="chip">Riverpod</span><span class="chip">Clean Architecture</span><span class="chip">GoRouter</span><span class="chip">GetIt</span></div>
+      </div>
+
+      <div class="skill-card reveal" data-d="3">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
+          <div><h3 data-pt="Backend &amp; APIs" data-en="Backend &amp; APIs">Backend &amp; APIs</h3><span class="h-sub">// backend</span></div>
+        </div>
+        <div class="chips"><span class="chip">REST</span><span class="chip">GraphQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">Supabase</span><span class="chip">NestJS</span><span class="chip">Kibana</span></div>
+      </div>
+
+      <div class="skill-card reveal" data-d="1">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M10 2v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V2"/></svg></span>
+          <div><h3 data-pt="Qualidade &amp; DevOps" data-en="Quality &amp; DevOps">Qualidade &amp; DevOps</h3><span class="h-sub">// quality</span></div>
+        </div>
+        <div class="chips"><span class="chip">Flutter Test</span><span class="chip">Mockito</span><span class="chip">Cypress</span><span class="chip">Postman</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">Code review</span></div>
+      </div>
+
+      <div class="skill-card reveal" data-d="2">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></span>
+          <div><h3 data-pt="Metodologias" data-en="Methodologies">Metodologias</h3><span class="h-sub">// agile</span></div>
+        </div>
+        <div class="chips"><span class="chip">SCRUM</span><span class="chip">Jira</span><span class="chip">Planning</span><span class="chip">Daily</span><span class="chip">Review</span><span class="chip">Retro</span></div>
+      </div>
+
+      <div class="skill-card reveal" data-d="3">
+        <div class="skill-head">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
+          <div><h3 data-pt="Diferenciais" data-en="Edge">Diferenciais</h3><span class="h-sub">// edge</span></div>
+        </div>
+        <div class="chips"><span class="chip">QA/Automação</span><span class="chip">Troubleshooting Kibana</span><span class="chip">Pacotes pub.dev</span><span class="chip">GraphQL em produção</span></div>
+      </div>
+    </div>
+
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        <span>Flutter<i></i></span><span>Dart<i></i></span><span>BLoC<i></i></span><span>Cubit<i></i></span><span>Riverpod<i></i></span><span>GraphQL<i></i></span><span>REST<i></i></span><span>Firebase<i></i></span><span>MongoDB<i></i></span><span>NestJS<i></i></span><span>Cypress<i></i></span><span>Mockito<i></i></span><span>Kibana<i></i></span><span>CI/CD<i></i></span>
+        <span>Flutter<i></i></span><span>Dart<i></i></span><span>BLoC<i></i></span><span>Cubit<i></i></span><span>Riverpod<i></i></span><span>GraphQL<i></i></span><span>REST<i></i></span><span>Firebase<i></i></span><span>MongoDB<i></i></span><span>NestJS<i></i></span><span>Cypress<i></i></span><span>Mockito<i></i></span><span>Kibana<i></i></span><span>CI/CD<i></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">03</span> / <span data-pt="EXPERIÊNCIA" data-en="EXPERIENCE">EXPERIÊNCIA</span></div>
+    <h2 class="sec-title reveal" data-d="1" data-pt="Trajetória" data-en="Track record">Trajetória</h2>
+
+    <div class="timeline" style="margin-top:36px">
+      <div class="tl-item now reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <h3 class="tl-role" data-pt="Desenvolvedor Flutter" data-en="Flutter Developer">Desenvolvedor Flutter</h3>
+            <span class="tl-period" data-pt="Jul 2025 — Presente" data-en="Jul 2025 — Present">Jul 2025 — Presente</span>
+          </div>
+          <div class="tl-meta"><span class="co">Unitech · Unimed Fortaleza</span><span class="badge" data-pt="Remoto/Híbrido" data-en="Remote/Hybrid">Remoto/Híbrido</span><span>Fortaleza/CE</span></div>
+          <ul class="tl-list">
+            <li data-pt="Desenvolve e mantém apps multiplataforma (Android, iOS, Web) com Flutter, priorizando qualidade e performance." data-en="Builds and maintains cross-platform apps (Android, iOS, Web) with Flutter, prioritizing quality and performance.">Desenvolve e mantém apps multiplataforma (Android, iOS, Web) com Flutter, priorizando qualidade e performance.</li>
+            <li data-pt="Gerencia estado com BLoC e Cubit e cria pacotes Flutter reutilizáveis, acelerando ciclos de desenvolvimento." data-en="Manages state with BLoC and Cubit and builds reusable Flutter packages, speeding up dev cycles.">Gerencia estado com BLoC e Cubit e cria pacotes Flutter reutilizáveis, acelerando ciclos de desenvolvimento.</li>
+            <li data-pt="Integra APIs REST e GraphQL, escreve testes (Flutter Test, Mockito) e monitora via Kibana." data-en="Integrates REST and GraphQL APIs, writes tests (Flutter Test, Mockito) and monitors via Kibana.">Integra APIs REST e GraphQL, escreve testes (Flutter Test, Mockito) e monitora via Kibana.</li>
+            <li data-pt="Atua nas cerimônias Scrum e code reviews, colaborando com Backend, QA e UX." data-en="Engages in Scrum ceremonies and code reviews, collaborating with Backend, QA and UX.">Atua nas cerimônias Scrum e code reviews, colaborando com Backend, QA e UX.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <h3 class="tl-role" data-pt="Desenvolvedor Flutter" data-en="Flutter Developer">Desenvolvedor Flutter</h3>
+            <span class="tl-period">Abr 2024 — Jul 2025</span>
+          </div>
+          <div class="tl-meta"><span class="co">Grupo Portfolio</span><span>Fortaleza/CE</span></div>
+          <ul class="tl-list">
+            <li data-pt="Desenvolveu apps multiplataforma com Flutter e gerenciamento de estado (BLoC, Cubit) para escalabilidade." data-en="Built cross-platform apps with Flutter and state management (BLoC, Cubit) for scalability.">Desenvolveu apps multiplataforma com Flutter e gerenciamento de estado (BLoC, Cubit) para escalabilidade.</li>
+            <li data-pt="Integrou APIs REST e GraphQL com tratamento seguro de dados e manteve testes unitários e de integração." data-en="Integrated REST and GraphQL APIs with secure data handling and maintained unit &amp; integration tests.">Integrou APIs REST e GraphQL com tratamento seguro de dados e manteve testes unitários e de integração.</li>
+            <li data-pt="Monitorou aplicações com Kibana, usou MongoDB e participou de squads ágeis (SCRUM) via Jira." data-en="Monitored apps with Kibana, used MongoDB and worked in agile squads (SCRUM) via Jira.">Monitorou aplicações com Kibana, usou MongoDB e participou de squads ágeis (SCRUM) via Jira.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <h3 class="tl-role" data-pt="Analista de Testes" data-en="QA Analyst">Analista de Testes</h3>
+            <span class="tl-period">Mar 2021 — Ago 2024</span>
+          </div>
+          <div class="tl-meta"><span class="co">Grupo Portfolio</span><span>Fortaleza/CE</span></div>
+          <ul class="tl-list">
+            <li data-pt="Executou testes funcionais, de validação e regressão em plataformas mobile e web." data-en="Ran functional, validation and regression testing across mobile and web platforms.">Executou testes funcionais, de validação e regressão em plataformas mobile e web.</li>
+            <li data-pt="Automatizou testes no Flutter, APIs (Postman) e web (Cypress), validando integração e fluxo de dados." data-en="Automated tests in Flutter, APIs (Postman) and web (Cypress), validating integration and data flow.">Automatizou testes no Flutter, APIs (Postman) e web (Cypress), validando integração e fluxo de dados.</li>
+            <li data-pt="Analisou logs e monitorou performance via Kibana." data-en="Analyzed logs and monitored performance via Kibana.">Analisou logs e monitorou performance via Kibana.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <h3 class="tl-role" data-pt="Estagiário de Testes" data-en="QA Intern">Estagiário de Testes</h3>
+            <span class="tl-period">Nov 2019 — Nov 2020</span>
+          </div>
+          <div class="tl-meta"><span class="co">LAMPP-IT Solutions</span><span>Fortaleza/CE</span></div>
+          <ul class="tl-list">
+            <li data-pt="Criou scripts de teste no TestLink para sistemas do TJCE." data-en="Created test scripts in TestLink for TJCE systems.">Criou scripts de teste no TestLink para sistemas do TJCE.</li>
+            <li data-pt="Automatizou testes e elaborou manuais de usuário e webservice." data-en="Automated tests and authored user &amp; webservice manuals.">Automatizou testes e elaborou manuais de usuário e webservice.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-label reveal" style="margin-top:48px"><span class="idx">·</span> <span data-pt="FORMAÇÃO" data-en="EDUCATION">FORMAÇÃO</span></div>
+    <div class="edu-card reveal" data-d="1">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg></div>
+      <div>
+        <h4 data-pt="Bacharelado em Ciências da Computação" data-en="B.Sc. in Computer Science">Bacharelado em Ciências da Computação</h4>
+        <div class="where">Centro Universitário Farias Brito</div>
+      </div>
+      <span class="when">2018 — 2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">04</span> / <span data-pt="PROJETOS" data-en="PROJECTS">PROJETOS</span></div>
+    <h2 class="sec-title reveal" data-d="1" data-pt="Projetos em destaque" data-en="Featured projects">Projetos em destaque</h2>
+    <p class="sec-intro reveal" data-d="1" data-pt="Uma seleção entre 50+ repositórios — de apps Flutter em Clean Architecture a automação de QA." data-en="A selection from 50+ repositories — from Clean-Architecture Flutter apps to QA automation." style="margin-bottom:40px">Uma seleção entre 50+ repositórios — de apps Flutter em Clean Architecture a automação de QA.</p>
+
+    <div class="proj-grid">
+      <article class="proj feat reveal" data-d="1">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/agendamento-app-pet" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Agenda Pet Saúde</h3>
+        <div class="proj-repo">github.com/davinegreiiros/agendamento-app-pet</div>
+        <p data-pt="App de agendamento e cuidados para pets construído em Clean Architecture com BLoC e tratamento de erros funcional via dartz (Either). Autenticação por e-mail e social, CRUD completo de pets e navegação declarativa com rotas centralizadas." data-en="A pet scheduling &amp; care app built in Clean Architecture with BLoC and functional error handling via dartz (Either). Email &amp; social auth, full pet CRUD and declarative routing with centralized routes.">App de agendamento e cuidados para pets construído em Clean Architecture com BLoC e tratamento de erros funcional via dartz (Either). Autenticação por e-mail e social, CRUD completo de pets e navegação declarativa com rotas centralizadas.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">BLoC</span><span class="chip">Clean Architecture</span><span class="chip">dartz</span></div>
+      </article>
+
+      <article class="proj feat reveal" data-d="2">
+        <div class="proj-top">
+          <span class="proj-type">iOS · Swift</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/PomodoroQuest" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>PomodoroQuest</h3>
+        <div class="proj-repo">github.com/davinegreiiros/PomodoroQuest</div>
+        <p data-pt="Timer Pomodoro com uma camada de RPG retrô: cada foco concluído rende XP e sobe o nível do herói. Live Activity na Dynamic Island, notificações locais e áudio chiptune — em SwiftUI, @Observable e Clean Architecture." data-en="A Pomodoro timer with a retro RPG layer: each finished focus earns XP and levels up the hero. Live Activity on the Dynamic Island, local notifications and chiptune audio — in SwiftUI, @Observable and Clean Architecture.">Timer Pomodoro com uma camada de RPG retrô: cada foco concluído rende XP e sobe o nível do herói. Live Activity na Dynamic Island, notificações locais e áudio chiptune — em SwiftUI, @Observable e Clean Architecture.</p>
+        <div class="proj-tech"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Live Activity</span><span class="chip">Clean Architecture</span></div>
+      </article>
+
+      <article class="proj reveal" data-d="1">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/sas_barber" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>BarberSaaS</h3>
+        <div class="proj-repo">/sas_barber</div>
+        <p data-pt="SaaS de gestão de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards de auth e tema Material 3." data-en="A barbershop management SaaS with client / barber / admin roles, Dio with JWT auto-refresh, GoRouter auth guards and Material 3 theming.">SaaS de gestão de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards de auth e tema Material 3.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">BLoC</span><span class="chip">GoRouter</span><span class="chip">Dio</span><span class="chip">get_it</span></div>
+      </article>
+
+      <article class="proj reveal" data-d="2">
+        <div class="proj-top">
+          <span class="proj-type">QA · Automação</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/cypress-basico-v2" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Cypress E2E</h3>
+        <div class="proj-repo">/cypress-basico-v2</div>
+        <p data-pt="Automação de testes end-to-end com comandos customizados, boas práticas e cenários reais de teste web — o lado QA da minha engenharia." data-en="End-to-end test automation with custom commands, best practices and real-world web scenarios — the QA side of my engineering.">Automação de testes end-to-end com comandos customizados, boas práticas e cenários reais de teste web — o lado QA da minha engenharia.</p>
+        <div class="proj-tech"><span class="chip">Cypress</span><span class="chip">JavaScript</span><span class="chip">E2E</span></div>
+      </article>
+
+      <article class="proj reveal" data-d="3">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/projeto-app-despesas" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Expenses</h3>
+        <div class="proj-repo">/projeto-app-despesas</div>
+        <p data-pt="App de controle de despesas pessoais em Flutter: registro de transações, categorização e visualização de gastos em gráficos." data-en="A personal expense tracker in Flutter: transaction logging, categorization and spending visualized in charts.">App de controle de despesas pessoais em Flutter: registro de transações, categorização e visualização de gastos em gráficos.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Charts</span></div>
+      </article>
+    </div>
+
+    <p class="reveal" style="margin-top:28px;font-family:var(--font-mono);font-size:13px;color:var(--txt-3)">
+      <a href="https://github.com/davinegreiiros?tab=repositories" target="_blank" rel="noopener" style="color:var(--acc)">→ <span data-pt="ver todos os repositórios no GitHub" data-en="see all repositories on GitHub">ver todos os repositórios no GitHub</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contato" class="contact">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">05</span> / <span data-pt="CONTATO" data-en="CONTACT">CONTATO</span></div>
+    <h2 class="contact-title reveal" data-d="1" data-pt="Vamos construir<br>algo de qualidade." data-en="Let's build<br>something solid.">Vamos construir<br>algo de qualidade.</h2>
+    <p class="contact-sub reveal" data-d="2" data-pt="Aberto a oportunidades como Desenvolvedor Mobile Flutter. Bora conversar?" data-en="Open to Flutter Mobile Developer opportunities. Let's talk?">Aberto a oportunidades como Desenvolvedor Mobile Flutter. Bora conversar?</p>
+    <div class="contact-actions reveal" data-d="3">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.7 1.8-1.7 1.7.8 1.7 1.7-.7 1.8-1.7 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-outline" href="https://github.com/davinegreiiros" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2C5.7 21.8 5 19.7 5 19.7c-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12c0-6.6-5.4-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" href="uploads/Curriculo_Davi_Flutter_Vaga.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        <span data-pt="Currículo (PDF)" data-en="Resume (PDF)">Currículo (PDF)</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="col" data-pt="Projetado &amp; codado em Fortaleza/CE · Flutter + ☕" data-en="Designed &amp; coded in Fortaleza/BR · Flutter + ☕">Projetado &amp; codado em Fortaleza/CE · Flutter + ☕</div>
+    <div class="col links">
+      <a href="https://github.com/davinegreiiros" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/daviinegreiros" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="col">© 2026 Davi Negreiros</div>
+  </div>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="src/app.js"></script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="src/tweaks-panel.jsx"></script>
+<script type="text/babel" src="src/tweaks.jsx"></script>
+</body>
 </html>
