@@ -3,16 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Davi Negreiros — Desenvolvedor Mobile Flutter</title>
-<meta name="description" content="Davi Negreiros — Desenvolvedor Mobile Flutter com background em QA. Clean Architecture, BLoC, GraphQL. Fortaleza/CE." />
+<title>Davi Negreiros — Flutter &amp; Full Stack · SDD</title>
+<meta name="description" content="Davi Negreiros — Desenvolvedor Flutter com entrega full stack (Next.js, TypeScript, MongoDB) guiada por Spec Driven Development e background em QA. Fortaleza/CE." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="src/styles.css" />
+<link rel="stylesheet" href="src/motion.css" />
 <link rel="stylesheet" href="src/tweaks/panel.css" />
 </head>
 <body>
 <div class="scanlines"></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav">
@@ -24,10 +28,11 @@
 
     <nav class="nav-links">
       <a href="#sobre"><span class="n">01</span><span data-pt="Sobre" data-en="About">Sobre</span></a>
-      <a href="#skills"><span class="n">02</span><span data-pt="Skills" data-en="Skills">Skills</span></a>
-      <a href="#experiencia"><span class="n">03</span><span data-pt="Experiência" data-en="Experience">Experiência</span></a>
+      <a href="#stack"><span class="n">02</span><span data-pt="Stack" data-en="Stack">Stack</span></a>
+      <a href="#metodo"><span class="n">03</span><span data-pt="Método" data-en="Method">Método</span></a>
       <a href="#projetos"><span class="n">04</span><span data-pt="Projetos" data-en="Projects">Projetos</span></a>
-      <a href="#contato"><span class="n">05</span><span data-pt="Contato" data-en="Contact">Contato</span></a>
+      <a href="#experiencia"><span class="n">05</span><span data-pt="Experiência" data-en="Experience">Experiência</span></a>
+      <a href="#contato"><span class="n">06</span><span data-pt="Contato" data-en="Contact">Contato</span></a>
     </nav>
 
     <div class="nav-tools">
@@ -38,7 +43,7 @@
       <a class="icon-btn" href="https://github.com/davinegreiiros" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2C5.7 21.8 5 19.7 5 19.7c-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12c0-6.6-5.4-12-12-12z"/></svg>
       </a>
-      <a class="btn btn-outline" href="uploads/Curriculo_Davi_Flutter_Vaga.pdf" target="_blank" rel="noopener">
+      <a class="btn btn-outline magnetic" href="uploads/Curriculo_DaviNegreiros_2026.pdf" target="_blank" rel="noopener" data-cursor="CV">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
         <span class="cv-text" data-pt="Baixar CV" data-en="Download CV">Baixar CV</span>
       </a>
@@ -49,8 +54,13 @@
 <!-- ============ HERO ============ -->
 <main id="top">
 <section class="hero" id="hero">
-  <div class="hero-glow g1"></div>
-  <div class="hero-glow g2"></div>
+  <div class="hero-glow g1" data-mouse="30"></div>
+  <div class="hero-glow g2" data-mouse="-20"></div>
+  <div class="hero-orbits" aria-hidden="true" data-parallax="0.25">
+    <span class="orbit o1"><i>Flutter</i></span>
+    <span class="orbit o2"><i>Next.js</i></span>
+    <span class="orbit o3"><i>spec.md</i></span>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
@@ -58,42 +68,47 @@
           <span class="dot"></span>
           <span data-pt="Disponível para novos projetos" data-en="Available for new projects">Disponível para novos projetos</span>
         </div>
-        <p class="hero-kicker reveal" data-d="1"><span class="acc">//</span> <span data-pt="Desenvolvedor Mobile · Mobile &amp; QA" data-en="Mobile Developer · Mobile &amp; QA">Desenvolvedor Mobile · Mobile &amp; QA</span></p>
-        <h1 class="reveal" data-d="1">Davi<span class="sur gradient-text">Negreiros</span></h1>
+        <p class="hero-kicker reveal" data-d="1"><span class="acc">//</span> <span data-pt="Flutter · Full Stack · Spec Driven Development" data-en="Flutter · Full Stack · Spec Driven Development">Flutter · Full Stack · Spec Driven Development</span></p>
+        <h1 class="hero-title" aria-label="Davi Negreiros">
+          <span class="line"><span class="line-in">Davi</span></span>
+          <span class="line"><span class="line-in sur gradient-text">Negreiros</span></span>
+        </h1>
         <p class="hero-role reveal" data-d="2"><span class="acc">&gt;</span> <span class="typed"></span><span class="cursor"></span></p>
-        <p class="hero-desc reveal" data-d="2" data-pt="Transformo ideias em aplicações mobile de alta performance. Mais de 3 anos construindo apps Flutter em produção — com um diferencial raro: olhar de QA que garante qualidade desde a primeira linha." data-en="I turn ideas into high-performance mobile apps. 3+ years shipping production Flutter — with a rare edge: a QA mindset that bakes quality in from the very first line.">Transformo ideias em aplicações mobile de alta performance. Mais de 3 anos construindo apps Flutter em produção — com um diferencial raro: olhar de QA que garante qualidade desde a primeira linha.</p>
+        <p class="hero-desc reveal" data-d="2"
+           data-pt="Flutter é onde eu sou mais forte — apps Android, iOS e Web em produção, com Clean Architecture e BLoC/Cubit. E quando o produto pede, eu entrego o backend também: <b>Next.js, TypeScript e MongoDB</b>, tudo guiado por spec antes do código."
+           data-en="Flutter is where I'm strongest — Android, iOS and Web apps in production, with Clean Architecture and BLoC/Cubit. And when the product needs it, I ship the backend too: <b>Next.js, TypeScript and MongoDB</b>, all driven by a spec before any code.">Flutter é onde eu sou mais forte — apps Android, iOS e Web em produção, com Clean Architecture e BLoC/Cubit. E quando o produto pede, eu entrego o backend também: <b>Next.js, TypeScript e MongoDB</b>, tudo guiado por spec antes do código.</p>
 
         <div class="hero-cta reveal" data-d="3">
-          <a class="btn btn-primary" href="#projetos">
+          <a class="btn btn-primary magnetic" href="#projetos" data-cursor="ver">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             <span data-pt="Ver projetos" data-en="View projects">Ver projetos</span>
           </a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.7 1.8-1.7 1.7.8 1.7 1.7-.7 1.8-1.7 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/></svg>
-            LinkedIn
+          <a class="btn btn-outline magnetic" href="#metodo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+            <span data-pt="Como eu trabalho" data-en="How I work">Como eu trabalho</span>
           </a>
         </div>
 
         <div class="hero-stats reveal" data-d="4">
           <div class="stat">
-            <div class="v"><span class="acc" data-count="3" data-suffix="+">3+</span></div>
-            <div class="l" data-pt="anos em produção" data-en="years in production">anos em produção</div>
+            <div class="v"><span class="acc" data-count="5" data-suffix="+">5+</span></div>
+            <div class="l" data-pt="anos em software (Dev + QA)" data-en="years in software (Dev + QA)">anos em software (Dev + QA)</div>
           </div>
           <div class="div"></div>
           <div class="stat">
-            <div class="v"><span data-count="52" data-suffix="">52</span></div>
-            <div class="l" data-pt="repositórios públicos" data-en="public repositories">repositórios públicos</div>
+            <div class="v"><span data-count="40" data-suffix="">40</span></div>
+            <div class="l" data-pt="specs SDD escritas" data-en="SDD specs written">specs SDD escritas</div>
           </div>
           <div class="div"></div>
           <div class="stat">
-            <div class="v"><span class="acc">Dev+QA</span></div>
-            <div class="l" data-pt="o diferencial" data-en="the differential">o diferencial</div>
+            <div class="v"><span class="acc">App+API</span></div>
+            <div class="l" data-pt="front e back no mesmo produto" data-en="front and back, same product">front e back no mesmo produto</div>
           </div>
         </div>
       </div>
 
       <aside class="hero-aside reveal" data-d="2">
-        <div class="term term-lg">
+        <div class="term term-lg tilt">
           <div class="barhead">
             <span class="dots"><span></span><span></span><span></span></span>
             <span class="fname">zsh — davi@portfolio</span>
@@ -111,7 +126,25 @@
       </aside>
     </div>
   </div>
+  <a class="scroll-hint" href="#sobre" aria-label="Rolar">
+    <span class="mouse"><span></span></span>
+    <span data-pt="role" data-en="scroll">role</span>
+  </a>
 </section>
+
+<!-- ============ KINETIC BAND ============ -->
+<div class="kinetic" aria-hidden="true">
+  <div class="kinetic-row" data-speed="1">
+    <div class="kinetic-track">
+      <span>Flutter</span><b>✦</b><span class="o">Dart</span><b>✦</b><span>BLoC / Cubit</span><b>✦</b><span class="o">Clean Architecture</span><b>✦</b><span>Next.js</span><b>✦</b><span class="o">TypeScript</span><b>✦</b><span>MongoDB</span><b>✦</b>
+    </div>
+  </div>
+  <div class="kinetic-row rev" data-speed="-0.8">
+    <div class="kinetic-track">
+      <span class="o">spec.md</span><b>→</b><span>plan.md</span><b>→</b><span class="o">tasks.md</span><b>→</b><span>code</span><b>→</b><span class="o">tests</span><b>→</b><span>ship</span><b>→</b>
+    </div>
+  </div>
+</div>
 
 <!-- ============ ABOUT ============ -->
 <section id="sobre">
@@ -119,120 +152,300 @@
     <div class="sec-label reveal"><span class="idx">01</span> / <span data-pt="SOBRE" data-en="ABOUT">SOBRE</span></div>
     <div class="about-grid">
       <div>
-        <p class="about-lead reveal" data-d="1"
-           data-pt="Desenvolvedor Flutter que pensa como <span class='hl'>engenheiro de qualidade</span>. Construo apps multiplataforma para Android, iOS e Web — e testo cada um deles como se a vida do usuário dependesse disso."
-           data-en="A Flutter developer who thinks like a <span class='hl'>quality engineer</span>. I build cross-platform apps for Android, iOS and Web — and test each one as if a user's life depended on it.">
-          Desenvolvedor Flutter que pensa como <span class="hl">engenheiro de qualidade</span>. Construo apps multiplataforma para Android, iOS e Web — e testo cada um deles como se a vida do usuário dependesse disso.
+        <p class="about-lead split-words" data-split
+           data-pt="Desenvolvedor Flutter que pensa como <span class='hl'>engenheiro de qualidade</span> e entrega o produto de ponta a ponta — do widget à API."
+           data-en="A Flutter developer who thinks like a <span class='hl'>quality engineer</span> and ships the product end to end — from widget to API.">
+          Desenvolvedor Flutter que pensa como <span class="hl">engenheiro de qualidade</span> e entrega o produto de ponta a ponta — do widget à API.
         </p>
         <p class="about-body reveal" data-d="2"
-           data-pt="Mais de 3 anos atuando em produção e times ágeis multidisciplinares, com domínio em gerenciamento de estado (BLoC, Cubit, Riverpod), integração com APIs REST e GraphQL, testes unitários e de integração, e Clean Architecture. Experiência completa no ciclo mobile: builds, publicação nas lojas e CI/CD."
-           data-en="3+ years in production and cross-functional agile teams, with strong command of state management (BLoC, Cubit, Riverpod), REST &amp; GraphQL integration, unit &amp; integration testing, and Clean Architecture. Full mobile lifecycle: builds, store publishing and CI/CD.">
-          Mais de 3 anos atuando em produção e times ágeis multidisciplinares, com domínio em gerenciamento de estado (BLoC, Cubit, Riverpod), integração com APIs REST e GraphQL, testes unitários e de integração, e Clean Architecture. Experiência completa no ciclo mobile: builds, publicação nas lojas e CI/CD.
+           data-pt="Atuo em produção em times ágeis com Flutter, BLoC/Cubit, Clean Architecture, integração REST e GraphQL, testes unitários e de integração e pacotes reutilizáveis. Conheço o ciclo mobile inteiro: build, publicação nas lojas, homologação e monitoramento."
+           data-en="I work in production on agile teams with Flutter, BLoC/Cubit, Clean Architecture, REST and GraphQL integration, unit and integration tests and reusable packages. I know the full mobile lifecycle: builds, store publishing, staging and monitoring.">
+          Atuo em produção em times ágeis com Flutter, BLoC/Cubit, Clean Architecture, integração REST e GraphQL, testes unitários e de integração e pacotes reutilizáveis. Conheço o ciclo mobile inteiro: build, publicação nas lojas, homologação e monitoramento.
         </p>
         <p class="about-body reveal" data-d="2"
-           data-pt="Meu histórico em QA e automação de testes é o que me diferencia: atenção obsessiva à qualidade, usabilidade e performance — colaborando de perto com Backend, QA e UX."
-           data-en="My background in QA and test automation is what sets me apart: an obsessive attention to quality, usability and performance — collaborating closely with Backend, QA and UX.">
-          Meu histórico em QA e automação de testes é o que me diferencia: atenção obsessiva à qualidade, usabilidade e performance — colaborando de perto com Backend, QA e UX.
+           data-pt="Nos meus produtos próprios eu vou além do app: escrevo a API em Next.js + TypeScript + MongoDB, com auth JWT, validação Zod e testes Vitest. Tudo nasce de uma spec aprovada (SDD) — e meus anos de QA garantem que cada critério de aceite vira teste."
+           data-en="On my own products I go beyond the app: I write the API in Next.js + TypeScript + MongoDB, with JWT auth, Zod validation and Vitest tests. Everything starts from an approved spec (SDD) — and my years in QA make sure every acceptance criterion becomes a test.">
+          Nos meus produtos próprios eu vou além do app: escrevo a API em Next.js + TypeScript + MongoDB, com auth JWT, validação Zod e testes Vitest. Tudo nasce de uma spec aprovada (SDD) — e meus anos de QA garantem que cada critério de aceite vira teste.
         </p>
       </div>
 
-      <div class="about-cards">
-        <div class="fact reveal" data-d="1">
+      <div class="about-cards stagger">
+        <div class="fact tilt">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h4>Flutter first</h4>
+          <p data-pt="Android · iOS · Web em produção, uma base de código." data-en="Android · iOS · Web in production, one codebase.">Android · iOS · Web em produção, uma base de código.</p>
+        </div>
+        <div class="fact tilt">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+          <h4>Full stack</h4>
+          <p data-pt="Next.js, TypeScript, MongoDB, Supabase." data-en="Next.js, TypeScript, MongoDB, Supabase.">Next.js, TypeScript, MongoDB, Supabase.</p>
+        </div>
+        <div class="fact tilt">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+          <h4>Spec Driven</h4>
+          <p data-pt="spec → plan → tasks → código. Sem improviso." data-en="spec → plan → tasks → code. No guesswork.">spec → plan → tasks → código. Sem improviso.</p>
+        </div>
+        <div class="fact tilt">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h4>Dev + QA</h4>
           <p data-pt="Qualidade desde a primeira linha de código." data-en="Quality from the very first line of code.">Qualidade desde a primeira linha de código.</p>
-        </div>
-        <div class="fact reveal" data-d="2">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg></div>
-          <h4>HealthTech</h4>
-          <p data-pt="Alocado na Unimed Fortaleza via Unitech." data-en="Allocated at Unimed Fortaleza through Unitech.">Alocado na Unimed Fortaleza via Unitech.</p>
-        </div>
-        <div class="fact reveal" data-d="3">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div>
-          <h4>Clean Architecture</h4>
-          <p data-pt="BLoC, Cubit, Riverpod e código manutenível." data-en="BLoC, Cubit, Riverpod and maintainable code.">BLoC, Cubit, Riverpod e código manutenível.</p>
-        </div>
-        <div class="fact reveal" data-d="4">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="14" height="10" rx="1.5"/><rect x="17" y="7" width="5" height="13" rx="1.5"/><path d="M6 18h6"/></svg></div>
-          <h4>Multiplataforma</h4>
-          <p data-pt="Android · iOS · Web com uma base de código." data-en="Android · iOS · Web from one codebase.">Android · iOS · Web com uma base de código.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills">
+<!-- ============ STACK ============ -->
+<section id="stack">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="idx">02</span> / <span data-pt="STACK &amp; SKILLS" data-en="STACK &amp; SKILLS">STACK &amp; SKILLS</span></div>
-    <h2 class="sec-title reveal" data-d="1" data-pt="Ferramentas que uso todos os dias" data-en="Tools I work with every day">Ferramentas que uso todos os dias</h2>
-    <p class="sec-intro reveal" data-d="1" data-pt="Do widget ao pipeline — uma stack pensada para apps escaláveis e bem testados." data-en="From widget to pipeline — a stack built for scalable, well-tested apps." style="margin-bottom:40px">Do widget ao pipeline — uma stack pensada para apps escaláveis e bem testados.</p>
+    <div class="sec-label reveal"><span class="idx">02</span> / <span data-pt="STACK" data-en="STACK">STACK</span></div>
+    <h2 class="sec-title split-words" data-split data-pt="Onde eu sou forte. <span class='acc'>Sem rodeio.</span>" data-en="Where I'm strong. <span class='acc'>No hedging.</span>">Onde eu sou forte. <span class="acc">Sem rodeio.</span></h2>
+    <p class="sec-intro reveal" data-d="1" data-pt="Três camadas, em ordem de profundidade. A primeira eu domino no dia a dia em produção; a segunda eu entrego de ponta a ponta nos meus produtos; a terceira é o processo que segura tudo de pé." data-en="Three layers, in order of depth. The first I master daily in production; the second I ship end to end on my own products; the third is the process that holds it all together." style="margin-bottom:44px">Três camadas, em ordem de profundidade. A primeira eu domino no dia a dia em produção; a segunda eu entrego de ponta a ponta nos meus produtos; a terceira é o processo que segura tudo de pé.</p>
 
-    <div class="skills-grid">
-      <div class="skill-card reveal" data-d="1">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
-          <div><h3 data-pt="Mobile" data-en="Mobile">Mobile</h3><span class="h-sub">// flutter &amp; dart</span></div>
+    <div class="tiers">
+      <article class="tier tier-core reveal">
+        <div class="tier-num">01</div>
+        <div class="tier-body">
+          <div class="tier-tag" data-pt="DOMINO · produção diária" data-en="MASTERED · daily production">DOMINO · produção diária</div>
+          <h3 data-pt="Mobile com Flutter" data-en="Mobile with Flutter">Mobile com Flutter</h3>
+          <p data-pt="É a minha língua nativa. Arquitetura em camadas, estado previsível com BLoC/Cubit, testes de widget e integração, offline-first e pacotes internos versionados — em app de saúde em produção." data-en="It's my native language. Layered architecture, predictable state with BLoC/Cubit, widget and integration tests, offline-first and versioned internal packages — in a production healthcare app.">É a minha língua nativa. Arquitetura em camadas, estado previsível com BLoC/Cubit, testes de widget e integração, offline-first e pacotes internos versionados — em app de saúde em produção.</p>
+          <div class="chips pop">
+            <span class="chip hot">Flutter</span><span class="chip hot">Dart</span><span class="chip hot">BLoC</span><span class="chip hot">Cubit</span><span class="chip hot">Clean Architecture</span><span class="chip">REST</span><span class="chip">GraphQL</span><span class="chip">flutter_test</span><span class="chip">bloc_test</span><span class="chip">integration_test</span><span class="chip">Mockito</span><span class="chip">sqflite</span><span class="chip">GoRouter</span><span class="chip">Provider</span><span class="chip">Firebase</span><span class="chip">Play Store</span><span class="chip">App Store</span>
+          </div>
         </div>
-        <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Widgets responsivos</span><span class="chip">Play Store</span><span class="chip">App Store</span></div>
-      </div>
+        <div class="tier-meter" aria-hidden="true"><span style="--w:100%"></span></div>
+      </article>
 
-      <div class="skill-card reveal" data-d="2">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></span>
-          <div><h3 data-pt="Estado &amp; Arquitetura" data-en="State &amp; Architecture">Estado &amp; Arquitetura</h3><span class="h-sub">// state</span></div>
+      <article class="tier reveal" data-d="1">
+        <div class="tier-num">02</div>
+        <div class="tier-body">
+          <div class="tier-tag" data-pt="ENTREGO · front + back" data-en="I SHIP · front + back">ENTREGO · front + back</div>
+          <h3 data-pt="Backend &amp; Web" data-en="Backend &amp; Web">Backend &amp; Web</h3>
+          <p data-pt="Escrevo a API que o meu app consome: rotas Next.js com auth JWT, senhas com bcrypt, validação Zod, MongoDB com índices e testes Vitest contra banco em memória. No web, React + TypeScript + Tailwind." data-en="I write the API my app consumes: Next.js routes with JWT auth, bcrypt passwords, Zod validation, indexed MongoDB and Vitest tests against an in-memory database. On the web, React + TypeScript + Tailwind.">Escrevo a API que o meu app consome: rotas Next.js com auth JWT, senhas com bcrypt, validação Zod, MongoDB com índices e testes Vitest contra banco em memória. No web, React + TypeScript + Tailwind.</p>
+          <div class="chips pop">
+            <span class="chip hot">Next.js</span><span class="chip hot">TypeScript</span><span class="chip hot">MongoDB</span><span class="chip">Node.js</span><span class="chip">Zod</span><span class="chip">JWT</span><span class="chip">Vitest</span><span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Express</span><span class="chip">Firestore</span><span class="chip">Supabase</span><span class="chip">Postgres RLS</span><span class="chip">Vercel</span>
+          </div>
         </div>
-        <div class="chips"><span class="chip">BLoC</span><span class="chip">Cubit</span><span class="chip">Riverpod</span><span class="chip">Clean Architecture</span><span class="chip">GoRouter</span><span class="chip">GetIt</span><span class="chip">Offline-first</span></div>
-      </div>
+        <div class="tier-meter" aria-hidden="true"><span style="--w:78%"></span></div>
+      </article>
 
-      <div class="skill-card reveal" data-d="3">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>
-          <div><h3 data-pt="Backend &amp; APIs" data-en="Backend &amp; APIs">Backend &amp; APIs</h3><span class="h-sub">// backend</span></div>
+      <article class="tier reveal" data-d="2">
+        <div class="tier-num">03</div>
+        <div class="tier-body">
+          <div class="tier-tag" data-pt="PROCESSO · o que segura tudo" data-en="PROCESS · what holds it together">PROCESSO · o que segura tudo</div>
+          <h3 data-pt="Qualidade &amp; Método" data-en="Quality &amp; Method">Qualidade &amp; Método</h3>
+          <p data-pt="Spec Driven Development em todos os repositórios, regra de zero-breakage, PR por spec e release develop → main. Herança de QA: Cypress, Postman, regressão e logs no Kibana. Uso agentes de IA (Claude Code) com a spec como contrato." data-en="Spec Driven Development in every repo, a zero-breakage rule, one PR per spec and develop → main releases. QA heritage: Cypress, Postman, regression and Kibana logs. I use AI agents (Claude Code) with the spec as the contract.">Spec Driven Development em todos os repositórios, regra de zero-breakage, PR por spec e release develop → main. Herança de QA: Cypress, Postman, regressão e logs no Kibana. Uso agentes de IA (Claude Code) com a spec como contrato.</p>
+          <div class="chips pop">
+            <span class="chip hot">SDD</span><span class="chip hot">QA &amp; automação</span><span class="chip">Cypress</span><span class="chip">Postman</span><span class="chip">Playwright</span><span class="chip">CI/CD</span><span class="chip">Git flow</span><span class="chip">Code review</span><span class="chip">Kibana</span><span class="chip">Crashlytics</span><span class="chip">Scrum</span><span class="chip">Jira</span><span class="chip">Claude Code</span>
+          </div>
         </div>
-        <div class="chips"><span class="chip">REST</span><span class="chip">GraphQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">Supabase</span><span class="chip">NestJS</span><span class="chip">Kibana</span><span class="chip">Crashlytics</span><span class="chip">Analytics realtime</span></div>
-      </div>
+        <div class="tier-meter" aria-hidden="true"><span style="--w:90%"></span></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <div class="skill-card reveal" data-d="1">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M10 2v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V2"/></svg></span>
-          <div><h3 data-pt="Qualidade &amp; DevOps" data-en="Quality &amp; DevOps">Qualidade &amp; DevOps</h3><span class="h-sub">// quality</span></div>
-        </div>
-        <div class="chips"><span class="chip">Flutter Test</span><span class="chip">Mockito</span><span class="chip">Cypress</span><span class="chip">Postman</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">Code review</span><span class="chip">Releases HMG</span></div>
-      </div>
+<!-- ============ METHOD / SDD ============ -->
+<section id="metodo" class="method">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">03</span> / <span data-pt="MÉTODO" data-en="METHOD">MÉTODO</span></div>
+    <h2 class="sec-title split-words" data-split data-pt="Spec Driven Development: <span class='acc'>código só depois da spec aprovada.</span>" data-en="Spec Driven Development: <span class='acc'>code only after the spec is approved.</span>">Spec Driven Development: <span class="acc">código só depois da spec aprovada.</span></h2>
+    <p class="sec-intro reveal" data-d="1" data-pt="Cada repositório tem uma constitution com as regras inegociáveis. Cada feature vira uma pasta <code>specs/NNN-nome/</code> com o quê, o como e o checklist — antes de qualquer linha de código. É assim que app e backend evoluem juntos sem quebrar." data-en="Every repo has a constitution with non-negotiable rules. Every feature becomes a <code>specs/NNN-name/</code> folder with the what, the how and the checklist — before any line of code. That's how app and backend evolve together without breaking.">Cada repositório tem uma constitution com as regras inegociáveis. Cada feature vira uma pasta <code>specs/NNN-nome/</code> com o quê, o como e o checklist — antes de qualquer linha de código. É assim que app e backend evoluem juntos sem quebrar.</p>
 
-      <div class="skill-card reveal" data-d="2">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></span>
-          <div><h3 data-pt="Metodologias" data-en="Methodologies">Metodologias</h3><span class="h-sub">// agile</span></div>
-        </div>
-        <div class="chips"><span class="chip">SCRUM</span><span class="chip">Jira</span><span class="chip">Planning</span><span class="chip">Daily</span><span class="chip">Review</span><span class="chip">Retro</span></div>
-      </div>
-
-      <div class="skill-card reveal" data-d="3">
-        <div class="skill-head">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
-          <div><h3 data-pt="Diferenciais" data-en="Edge">Diferenciais</h3><span class="h-sub">// edge</span></div>
-        </div>
-        <div class="chips"><span class="chip">QA/Automação</span><span class="chip">Troubleshooting Kibana</span><span class="chip">Pacotes internos</span><span class="chip">GraphQL em produção</span><span class="chip">UX Collab</span></div>
-      </div>
+    <div class="pipeline" aria-label="spec, plan, tasks, código, release">
+      <svg class="pipe-line" viewBox="0 0 1000 8" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="4" x2="1000" y2="4" pathLength="1"/></svg>
+      <div class="step"><span class="step-dot">0</span><b>constitution.md</b><small data-pt="regras inegociáveis" data-en="non-negotiable rules">regras inegociáveis</small></div>
+      <div class="step"><span class="step-dot">1</span><b>spec.md</b><small data-pt="o quê e por quê · Approved" data-en="what &amp; why · Approved">o quê e por quê · Approved</small></div>
+      <div class="step"><span class="step-dot">2</span><b>plan.md</b><small data-pt="como · arquivos e rotas" data-en="how · files &amp; routes">como · arquivos e rotas</small></div>
+      <div class="step"><span class="step-dot">3</span><b>tasks.md</b><small data-pt="checklist ordenado" data-en="ordered checklist">checklist ordenado</small></div>
+      <div class="step"><span class="step-dot">4</span><b data-pt="código + testes" data-en="code + tests">código + testes</b><small data-pt="critério de aceite = teste" data-en="acceptance criteria = test">critério de aceite = teste</small></div>
+      <div class="step"><span class="step-dot">5</span><b>release</b><small>PR · develop → main</small></div>
     </div>
 
-    <div class="marquee reveal">
-      <div class="marquee-track">
-        <span>Flutter<i></i></span><span>Dart<i></i></span><span>BLoC<i></i></span><span>Cubit<i></i></span><span>Riverpod<i></i></span><span>GraphQL<i></i></span><span>REST<i></i></span><span>Firebase<i></i></span><span>MongoDB<i></i></span><span>NestJS<i></i></span><span>Cypress<i></i></span><span>Mockito<i></i></span><span>Kibana<i></i></span><span>CI/CD<i></i></span>
-        <span>Flutter<i></i></span><span>Dart<i></i></span><span>BLoC<i></i></span><span>Cubit<i></i></span><span>Riverpod<i></i></span><span>GraphQL<i></i></span><span>REST<i></i></span><span>Firebase<i></i></span><span>MongoDB<i></i></span><span>NestJS<i></i></span><span>Cypress<i></i></span><span>Mockito<i></i></span><span>Kibana<i></i></span><span>CI/CD<i></i></span>
+    <div class="method-grid">
+      <div class="term tilt reveal">
+        <div class="barhead">
+          <span class="dots"><span></span><span></span><span></span></span>
+          <span class="fname">app-sonho-crianca/specs</span>
+        </div>
+        <div class="term-body tree">
+          <div><span class="key">specs/</span></div>
+          <div>├─ <span class="str">constitution.md</span></div>
+          <div>├─ 010-migracao-arquitetura-camadas/</div>
+          <div>├─ 020-persistencia-local/</div>
+          <div>├─ 022-backend-sync-fundacao/</div>
+          <div>├─ 023-posto-monitor-painel/</div>
+          <div>│  ├─ <span class="key">spec.md</span>   <span class="out">Status: Implemented</span></div>
+          <div>│  ├─ <span class="key">plan.md</span></div>
+          <div>│  └─ <span class="key">tasks.md</span>  <span class="out">[x] [x] [x] [x]</span></div>
+          <div>├─ 026-rental-via-backend/</div>
+          <div>├─ 028-relatorio-dono-whatsapp/</div>
+          <div>└─ 029-turno-via-backend/  <span class="out">Draft</span></div>
+        </div>
+      </div>
+
+      <div class="method-stats stagger">
+        <div class="mstat"><div class="v"><span data-count="29">29</span></div><div class="l" data-pt="specs no app Flutter" data-en="specs in the Flutter app">specs no app Flutter</div></div>
+        <div class="mstat"><div class="v"><span data-count="4">4</span></div><div class="l" data-pt="specs no backend Next.js" data-en="specs in the Next.js backend">specs no backend Next.js</div></div>
+        <div class="mstat"><div class="v"><span data-count="52">52</span></div><div class="l" data-pt="arquivos de teste (app + API)" data-en="test files (app + API)">arquivos de teste (app + API)</div></div>
+        <div class="mstat"><div class="v"><span class="acc">0</span></div><div class="l" data-pt="quebras aceitas — regra zero-breakage" data-en="breakages accepted — zero-breakage rule">quebras aceitas — regra zero-breakage</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="idx">04</span> / <span data-pt="PROJETOS" data-en="PROJECTS">PROJETOS</span></div>
+    <h2 class="sec-title split-words" data-split data-pt="Produtos que eu construí <span class='acc'>de ponta a ponta.</span>" data-en="Products I built <span class='acc'>end to end.</span>">Produtos que eu construí <span class="acc">de ponta a ponta.</span></h2>
+    <p class="sec-intro reveal" data-d="1" data-pt="Os mais recentes são produtos reais, em uso, com app e backend escritos por mim. Os repositórios privados eu apresento em entrevista." data-en="The latest ones are real products in use, with app and backend written by me. Private repos I walk through in interviews." style="margin-bottom:40px">Os mais recentes são produtos reais, em uso, com app e backend escritos por mim. Os repositórios privados eu apresento em entrevista.</p>
+
+    <!-- case study -->
+    <article class="case reveal" data-cursor="case">
+      <div class="case-info">
+        <div class="proj-top">
+          <span class="proj-type" data-pt="Case · App + API · SDD" data-en="Case · App + API · SDD">Case · App + API · SDD</span>
+          <span class="proj-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-pt="repo privado" data-en="private repo">repo privado</span></span>
+        </div>
+        <h3>Sonho de Criança</h3>
+        <p class="case-lead" data-pt="Sistema de aluguel de brinquedos por tempo: o monitor abre o posto no tablet, cronometra cada locação, recebe por Pix e fecha o caixa do turno; o dono acompanha tudo e recebe o relatório no WhatsApp." data-en="A timed toy-rental system: the attendant opens a station on the tablet, times each rental, gets paid via Pix and closes the shift's cash; the owner tracks everything and gets the report on WhatsApp.">Sistema de aluguel de brinquedos por tempo: o monitor abre o posto no tablet, cronometra cada locação, recebe por Pix e fecha o caixa do turno; o dono acompanha tudo e recebe o relatório no WhatsApp.</p>
+
+        <div class="case-cols">
+          <div>
+            <div class="case-k">// front · Flutter</div>
+            <ul class="tl-list">
+              <li data-pt="Migração incremental de um <code>AppState</code> global para camadas Repository → Cubit → View, em 12 specs, sem quebrar o app no meio." data-en="Incremental migration from a global <code>AppState</code> to Repository → Cubit → View layers, across 12 specs, never breaking the app mid-way.">Migração incremental de um <code>AppState</code> global para camadas Repository → Cubit → View, em 12 specs, sem quebrar o app no meio.</li>
+              <li data-pt="Pix QR Code, alarmes locais de fim de tempo, persistência SQLite e sessão de dispositivo." data-en="Pix QR Code, local end-of-time alarms, SQLite persistence and device sessions.">Pix QR Code, alarmes locais de fim de tempo, persistência SQLite e sessão de dispositivo.</li>
+              <li data-pt="Posto do monitor, fechamento de turno (esperado × contado) e trilha de lançamentos imutável." data-en="Attendant station, shift closing (expected × counted) and an immutable audit trail.">Posto do monitor, fechamento de turno (esperado × contado) e trilha de lançamentos imutável.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="case-k">// back · Next.js</div>
+            <ul class="tl-list">
+              <li data-pt="API em Next.js + TypeScript + MongoDB: rotas finas, repositories por coleção, validação Zod." data-en="Next.js + TypeScript + MongoDB API: thin routes, one repository per collection, Zod validation.">API em Next.js + TypeScript + MongoDB: rotas finas, repositories por coleção, validação Zod.</li>
+              <li data-pt="Auth por operador com JWT + bcrypt, multi-tenant por aparelho registrado e painel do desenvolvedor com Server Actions." data-en="Per-operator auth with JWT + bcrypt, multi-tenant by registered device and a developer panel with Server Actions.">Auth por operador com JWT + bcrypt, multi-tenant por aparelho registrado e painel do desenvolvedor com Server Actions.</li>
+              <li data-pt="Security review fechado: enumeração no login, condição de corrida e limite de corpo em stream chunked." data-en="Security review closed: login enumeration, race conditions and body limits on chunked streams.">Security review fechado: enumeração no login, condição de corrida e limite de corpo em stream chunked.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-tech"><span class="chip hot">Flutter</span><span class="chip">Cubit</span><span class="chip">sqflite</span><span class="chip hot">Next.js</span><span class="chip">TypeScript</span><span class="chip">MongoDB</span><span class="chip">Zod</span><span class="chip">JWT</span><span class="chip">Vitest</span><span class="chip">Vercel</span><span class="chip hot">SDD</span></div>
+      </div>
+
+      <div class="case-diagram" aria-hidden="true">
+        <div class="node n-app">
+          <span class="node-k">Flutter</span>
+          <b>App tablet</b>
+          <small>View · Cubit · Repository</small>
+        </div>
+        <svg class="flow" viewBox="0 0 40 120" preserveAspectRatio="none"><path d="M20 0 V120"/></svg>
+        <div class="node n-api">
+          <span class="node-k">Next.js</span>
+          <b>API REST</b>
+          <small>JWT · Zod · use cases</small>
+        </div>
+        <svg class="flow" viewBox="0 0 40 120" preserveAspectRatio="none"><path d="M20 0 V120"/></svg>
+        <div class="node n-db">
+          <span class="node-k">MongoDB</span>
+          <b>Toy · Rental · Operator</b>
+          <small data-pt="fonte de verdade única" data-en="single source of truth">fonte de verdade única</small>
+        </div>
+        <div class="case-badges">
+          <span>29 specs</span><span>+</span><span>4 specs</span>
+        </div>
+      </div>
+    </article>
+
+    <div class="proj-grid">
+      <article class="proj feat tilt reveal" data-d="1">
+        <div class="proj-top">
+          <span class="proj-type">Web · React + Express</span>
+          <span class="proj-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-pt="privado" data-en="private">privado</span></span>
+        </div>
+        <h3 data-pt="Painel Logístico" data-en="Logistics Dashboard">Painel Logístico</h3>
+        <div class="proj-repo" data-pt="SDD · 3 specs" data-en="SDD · 3 specs">SDD · 3 specs</div>
+        <p data-pt="Digitalizei a planilha de papel de despesas de uma frota de caminhões: uma planilha por veículo, fundo de caixa com saldo automático, parcelamento no crédito, resumo mensal e exportação para Excel, PDF e Google Drive. Sync opcional no Firestore." data-en="I digitized a truck fleet's paper expense sheet: one sheet per vehicle, a petty-cash fund with automatic balance, credit-card installments, a monthly summary and export to Excel, PDF and Google Drive. Optional Firestore sync.">Digitalizei a planilha de papel de despesas de uma frota de caminhões: uma planilha por veículo, fundo de caixa com saldo automático, parcelamento no crédito, resumo mensal e exportação para Excel, PDF e Google Drive. Sync opcional no Firestore.</p>
+        <div class="proj-tech"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Express</span><span class="chip">Firestore</span><span class="chip">Playwright</span><span class="chip">Vitest</span></div>
+      </article>
+
+      <article class="proj feat tilt reveal" data-d="2">
+        <div class="proj-top">
+          <span class="proj-type" data-pt="Mobile + Web · em construção" data-en="Mobile + Web · in progress">Mobile + Web · em construção</span>
+          <span class="proj-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-pt="privado" data-en="private">privado</span></span>
+        </div>
+        <h3>Sadah Barbearia</h3>
+        <div class="proj-repo" data-pt="monorepo · app + backend + design" data-en="monorepo · app + backend + design">monorepo · app + backend + design</div>
+        <p data-pt="Agendamento e gestão para barbearia: app Flutter para cliente e barbeiro, Supabase com Postgres, RLS e Edge Functions, e painel web do gestor em Next.js. Mesmo processo SDD do Sonho de Criança, com LGPD como spec de fundação." data-en="Booking and management for a barbershop: a Flutter app for client and barber, Supabase with Postgres, RLS and Edge Functions, and a Next.js manager dashboard. Same SDD process as Sonho de Criança, with LGPD as the foundation spec.">Agendamento e gestão para barbearia: app Flutter para cliente e barbeiro, Supabase com Postgres, RLS e Edge Functions, e painel web do gestor em Next.js. Mesmo processo SDD do Sonho de Criança, com LGPD como spec de fundação.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Supabase</span><span class="chip">Postgres RLS</span><span class="chip">Edge Functions</span><span class="chip">Next.js</span><span class="chip">LGPD</span></div>
+      </article>
+
+      <article class="proj tilt reveal" data-d="1">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/agendamento-app-pet" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Agenda Pet Saúde</h3>
+        <div class="proj-repo">/agendamento-app-pet</div>
+        <p data-pt="Agendamento e cuidados para pets em Clean Architecture com BLoC e erros funcionais via dartz (Either). Auth por e-mail e social, CRUD de pets e rotas centralizadas." data-en="Pet scheduling and care in Clean Architecture with BLoC and functional errors via dartz (Either). Email and social auth, pet CRUD and centralized routes.">Agendamento e cuidados para pets em Clean Architecture com BLoC e erros funcionais via dartz (Either). Auth por e-mail e social, CRUD de pets e rotas centralizadas.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">BLoC</span><span class="chip">Clean Arch</span><span class="chip">dartz</span></div>
+      </article>
+
+      <article class="proj tilt reveal" data-d="2">
+        <div class="proj-top">
+          <span class="proj-type">iOS · Swift</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/PomodoroQuest" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>PomodoroQuest</h3>
+        <div class="proj-repo">/PomodoroQuest</div>
+        <p data-pt="Timer Pomodoro com camada de RPG retrô: cada foco rende XP. Live Activity na Dynamic Island, notificações locais e áudio chiptune em SwiftUI." data-en="A Pomodoro timer with a retro RPG layer: each focus earns XP. Live Activity on the Dynamic Island, local notifications and chiptune audio in SwiftUI.">Timer Pomodoro com camada de RPG retrô: cada foco rende XP. Live Activity na Dynamic Island, notificações locais e áudio chiptune em SwiftUI.</p>
+        <div class="proj-tech"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Live Activity</span></div>
+      </article>
+
+      <article class="proj tilt reveal" data-d="3">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/sas_barber" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>BarberSaaS</h3>
+        <div class="proj-repo">/sas_barber</div>
+        <p data-pt="SaaS de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards e Material 3." data-en="Barbershop SaaS with client / barber / admin roles, Dio with JWT auto-refresh, GoRouter guards and Material 3.">SaaS de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards e Material 3.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">BLoC</span><span class="chip">GoRouter</span><span class="chip">Dio</span></div>
+      </article>
+
+      <article class="proj tilt reveal" data-d="1">
+        <div class="proj-top">
+          <span class="proj-type">QA · Automação</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/cypress-basico-v2" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Cypress E2E</h3>
+        <div class="proj-repo">/cypress-basico-v2</div>
+        <p data-pt="Testes end-to-end com comandos customizados e cenários reais de web — o lado QA da minha engenharia." data-en="End-to-end tests with custom commands and real-world web scenarios — the QA side of my engineering.">Testes end-to-end com comandos customizados e cenários reais de web — o lado QA da minha engenharia.</p>
+        <div class="proj-tech"><span class="chip">Cypress</span><span class="chip">JavaScript</span><span class="chip">E2E</span></div>
+      </article>
+
+      <article class="proj tilt reveal" data-d="2">
+        <div class="proj-top">
+          <span class="proj-type">Mobile · Flutter</span>
+          <a class="proj-ico" href="https://github.com/davinegreiiros/projeto-app-despesas" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <h3>Expenses</h3>
+        <div class="proj-repo">/projeto-app-despesas</div>
+        <p data-pt="Controle de despesas pessoais em Flutter: transações, categorias e gastos em gráficos." data-en="Personal expense tracker in Flutter: transactions, categories and spending charts.">Controle de despesas pessoais em Flutter: transações, categorias e gastos em gráficos.</p>
+        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Charts</span></div>
+      </article>
+    </div>
+
+    <p class="reveal" style="margin-top:28px;font-family:var(--font-mono);font-size:13px;color:var(--txt-3)">
+      <a href="https://github.com/davinegreiiros?tab=repositories" target="_blank" rel="noopener" style="color:var(--acc)">→ <span data-pt="ver todos os repositórios públicos no GitHub" data-en="see all public repositories on GitHub">ver todos os repositórios públicos no GitHub</span></a>
+    </p>
   </div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experiencia">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="idx">03</span> / <span data-pt="EXPERIÊNCIA" data-en="EXPERIENCE">EXPERIÊNCIA</span></div>
-    <h2 class="sec-title reveal" data-d="1" data-pt="Trajetória" data-en="Track record">Trajetória</h2>
+    <div class="sec-label reveal"><span class="idx">05</span> / <span data-pt="EXPERIÊNCIA" data-en="EXPERIENCE">EXPERIÊNCIA</span></div>
+    <h2 class="sec-title split-words" data-split data-pt="Trajetória: <span class='acc'>de QA a dev.</span>" data-en="Track record: <span class='acc'>from QA to dev.</span>">Trajetória: <span class="acc">de QA a dev.</span></h2>
 
     <div class="timeline" style="margin-top:36px">
       <div class="tl-item now reveal">
@@ -241,14 +454,13 @@
             <h3 class="tl-role" data-pt="Desenvolvedor Flutter" data-en="Flutter Developer">Desenvolvedor Flutter</h3>
             <span class="tl-period" data-pt="Jul 2025 — Presente" data-en="Jul 2025 — Present">Jul 2025 — Presente</span>
           </div>
-          <div class="tl-meta"><span class="co">Unitech · Unimed Fortaleza</span><span class="badge" data-pt="Remoto/Híbrido" data-en="Remote/Hybrid">Remoto/Híbrido</span><span>Fortaleza/CE</span></div>
+          <div class="tl-meta"><span class="co" data-pt="Unitech · alocado na Unimed Fortaleza" data-en="Unitech · allocated at Unimed Fortaleza">Unitech · alocado na Unimed Fortaleza</span><span>Fortaleza/CE</span></div>
           <ul class="tl-list">
-            <li data-pt="Desenvolve e mantém apps multiplataforma (Android, iOS, Web) em Flutter, aplicando Clean Architecture com BLoC/Cubit para código escalável, testável e desacoplado." data-en="Builds and maintains cross-platform apps (Android, iOS, Web) in Flutter, applying Clean Architecture with BLoC/Cubit for scalable, testable, decoupled code.">Desenvolve e mantém apps multiplataforma (Android, iOS, Web) em Flutter, aplicando Clean Architecture com BLoC/Cubit para código escalável, testável e desacoplado.</li>
-            <li data-pt="Cria e versiona pacotes Flutter internos (design system, cliente HTTP, auth) reaproveitados entre squads, reduzindo duplicação de código e acelerando novas features." data-en="Creates and versions internal Flutter packages (design system, HTTP client, auth) reused across squads, cutting code duplication and speeding up new features.">Cria e versiona pacotes Flutter internos (design system, cliente HTTP, auth) reaproveitados entre squads, reduzindo duplicação de código e acelerando novas features.</li>
-            <li data-pt="Implementa arquitetura offline-first com sincronização local/remoto, mantendo o app funcional em conexões instáveis — essencial no contexto de saúde." data-en="Implements offline-first architecture with local/remote sync, keeping the app usable on unstable connections — critical in a healthcare context.">Implementa arquitetura offline-first com sincronização local/remoto, mantendo o app funcional em conexões instáveis — essencial no contexto de saúde.</li>
-            <li data-pt="Acompanha a saúde da aplicação em produção via logs no Kibana, crash-free rate no Firebase Crashlytics e comportamento do usuário com Analytics em tempo real." data-en="Tracks production application health via Kibana logs, crash-free rate in Firebase Crashlytics, and real-time user behavior with Analytics.">Acompanha a saúde da aplicação em produção via logs no Kibana, crash-free rate no Firebase Crashlytics e comportamento do usuário com Analytics em tempo real.</li>
-            <li data-pt="Gerencia releases em homologação (HMG) via Firebase App Distribution, validando builds com QA antes do rollout em produção." data-en="Manages homologation (staging) releases via Firebase App Distribution, validating builds with QA before production rollout.">Gerencia releases em homologação (HMG) via Firebase App Distribution, validando builds com QA antes do rollout em produção.</li>
-            <li data-pt="Atua nas cerimônias Scrum e code reviews, colaborando com Backend, QA e UX para reduzir fricção e elevar a experiência do usuário final." data-en="Engages in Scrum ceremonies and code reviews, collaborating with Backend, QA and UX to reduce friction and elevate the end-user experience.">Atua nas cerimônias Scrum e code reviews, colaborando com Backend, QA e UX para reduzir fricção e elevar a experiência do usuário final.</li>
+            <li data-pt="Desenvolvo e mantenho apps multiplataforma (Android, iOS, Web) em Flutter, priorizando performance e escalabilidade com Clean Architecture e BLoC/Cubit." data-en="Build and maintain cross-platform apps (Android, iOS, Web) in Flutter, prioritizing performance and scalability with Clean Architecture and BLoC/Cubit.">Desenvolvo e mantenho apps multiplataforma (Android, iOS, Web) em Flutter, priorizando performance e escalabilidade com Clean Architecture e BLoC/Cubit.</li>
+            <li data-pt="Desenvolvo pacotes reutilizáveis para uso interno e externo, reduzindo o tempo de entrega de novas funcionalidades." data-en="Build reusable packages for internal and external use, cutting delivery time for new features.">Desenvolvo pacotes reutilizáveis para uso interno e externo, reduzindo o tempo de entrega de novas funcionalidades.</li>
+            <li data-pt="Integro APIs REST e GraphQL com segurança, eficiência e integridade no tratamento de dados; uso MongoDB para dados não relacionais." data-en="Integrate REST and GraphQL APIs with secure, efficient and consistent data handling; use MongoDB for non-relational data.">Integro APIs REST e GraphQL com segurança, eficiência e integridade no tratamento de dados; uso MongoDB para dados não relacionais.</li>
+            <li data-pt="Escrevo testes unitários e de integração — minha base de QA deixa os testes mais eficazes e reduz bugs em produção." data-en="Write unit and integration tests — my QA background makes them more effective and reduces production bugs.">Escrevo testes unitários e de integração — minha base de QA deixa os testes mais eficazes e reduz bugs em produção.</li>
+            <li data-pt="Monitoro e depuro com Kibana (Elastic Stack); participo de Scrum com Jira e code reviews." data-en="Monitor and debug with Kibana (Elastic Stack); take part in Scrum with Jira and code reviews.">Monitoro e depuro com Kibana (Elastic Stack); participo de Scrum com Jira e code reviews.</li>
           </ul>
         </div>
       </div>
@@ -261,9 +473,9 @@
           </div>
           <div class="tl-meta"><span class="co">Grupo Portfolio</span><span>Fortaleza/CE</span></div>
           <ul class="tl-list">
-            <li data-pt="Desenvolveu apps multiplataforma com Flutter e gerenciamento de estado (BLoC, Cubit) para escalabilidade." data-en="Built cross-platform apps with Flutter and state management (BLoC, Cubit) for scalability.">Desenvolveu apps multiplataforma com Flutter e gerenciamento de estado (BLoC, Cubit) para escalabilidade.</li>
-            <li data-pt="Integrou APIs REST e GraphQL com tratamento seguro de dados e manteve testes unitários e de integração." data-en="Integrated REST and GraphQL APIs with secure data handling and maintained unit &amp; integration tests.">Integrou APIs REST e GraphQL com tratamento seguro de dados e manteve testes unitários e de integração.</li>
-            <li data-pt="Monitorou aplicações com Kibana, usou MongoDB e participou de squads ágeis (SCRUM) via Jira." data-en="Monitored apps with Kibana, used MongoDB and worked in agile squads (SCRUM) via Jira.">Monitorou aplicações com Kibana, usou MongoDB e participou de squads ágeis (SCRUM) via Jira.</li>
+            <li data-pt="Desenvolveu apps multiplataforma (Android, iOS, Web) com Flutter e gerenciamento de estado BLoC/Cubit." data-en="Built cross-platform apps (Android, iOS, Web) with Flutter and BLoC/Cubit state management.">Desenvolveu apps multiplataforma (Android, iOS, Web) com Flutter e gerenciamento de estado BLoC/Cubit.</li>
+            <li data-pt="Criou pacotes reutilizáveis e publicáveis; integrou APIs REST e GraphQL com tratamento seguro de dados." data-en="Created reusable, publishable packages; integrated REST and GraphQL APIs with secure data handling.">Criou pacotes reutilizáveis e publicáveis; integrou APIs REST e GraphQL com tratamento seguro de dados.</li>
+            <li data-pt="Manteve testes unitários e de integração; monitorou com Kibana e usou MongoDB em squads Scrum via Jira." data-en="Maintained unit and integration tests; monitored with Kibana and used MongoDB in Scrum squads via Jira.">Manteve testes unitários e de integração; monitorou com Kibana e usou MongoDB em squads Scrum via Jira.</li>
           </ul>
         </div>
       </div>
@@ -276,9 +488,9 @@
           </div>
           <div class="tl-meta"><span class="co">Grupo Portfolio</span><span>Fortaleza/CE</span></div>
           <ul class="tl-list">
-            <li data-pt="Executou testes funcionais, de validação e regressão em plataformas mobile e web." data-en="Ran functional, validation and regression testing across mobile and web platforms.">Executou testes funcionais, de validação e regressão em plataformas mobile e web.</li>
-            <li data-pt="Automatizou testes no Flutter, APIs (Postman) e web (Cypress), validando integração e fluxo de dados." data-en="Automated tests in Flutter, APIs (Postman) and web (Cypress), validating integration and data flow.">Automatizou testes no Flutter, APIs (Postman) e web (Cypress), validando integração e fluxo de dados.</li>
-            <li data-pt="Analisou logs e monitorou performance via Kibana." data-en="Analyzed logs and monitored performance via Kibana.">Analisou logs e monitorou performance via Kibana.</li>
+            <li data-pt="Testes funcionais, de validação, regressão e performance em mobile e web; planejamento de cenários e casos de teste." data-en="Functional, validation, regression and performance testing on mobile and web; planned scenarios and test cases.">Testes funcionais, de validação, regressão e performance em mobile e web; planejamento de cenários e casos de teste.</li>
+            <li data-pt="Automação de testes unitários e de integração em Flutter, APIs com Postman e web com Cypress." data-en="Automated unit and integration tests in Flutter, APIs with Postman and web with Cypress.">Automação de testes unitários e de integração em Flutter, APIs com Postman e web com Cypress.</li>
+            <li data-pt="Validação de APIs REST e monitoramento de logs via Kibana." data-en="REST API validation and log monitoring via Kibana.">Validação de APIs REST e monitoramento de logs via Kibana.</li>
           </ul>
         </div>
       </div>
@@ -287,12 +499,26 @@
         <div class="tl-card">
           <div class="tl-top">
             <h3 class="tl-role" data-pt="Estagiário de Testes" data-en="QA Intern">Estagiário de Testes</h3>
-            <span class="tl-period">Nov 2019 — Nov 2020</span>
+            <span class="tl-period">Nov 2019 — Mar 2021</span>
           </div>
-          <div class="tl-meta"><span class="co">LAMPP-IT Solutions</span><span>Fortaleza/CE</span></div>
+          <div class="tl-meta"><span class="co">Grupo Portfolio · LAMPP-IT Solutions</span><span>Fortaleza/CE</span></div>
           <ul class="tl-list">
-            <li data-pt="Criou scripts de teste no TestLink para sistemas do TJCE." data-en="Created test scripts in TestLink for TJCE systems.">Criou scripts de teste no TestLink para sistemas do TJCE.</li>
-            <li data-pt="Automatizou testes e elaborou manuais de usuário e webservice." data-en="Automated tests and authored user &amp; webservice manuals.">Automatizou testes e elaborou manuais de usuário e webservice.</li>
+            <li data-pt="Grupo Portfolio (Nov 2020 — Mar 2021): testes exploratórios web e mobile, serviços POST e GET no Postman." data-en="Grupo Portfolio (Nov 2020 — Mar 2021): exploratory web and mobile testing, POST and GET services in Postman.">Grupo Portfolio (Nov 2020 — Mar 2021): testes exploratórios web e mobile, serviços POST e GET no Postman.</li>
+            <li data-pt="LAMPP-IT (Nov 2019 — Nov 2020): scripts de teste no TestLink para sistemas do TJCE, automação e manuais de usuário e webservice." data-en="LAMPP-IT (Nov 2019 — Nov 2020): TestLink test scripts for TJCE systems, automation and user and webservice manuals.">LAMPP-IT (Nov 2019 — Nov 2020): scripts de teste no TestLink para sistemas do TJCE, automação e manuais de usuário e webservice.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-card">
+          <div class="tl-top">
+            <h3 class="tl-role" data-pt="Início em TI" data-en="Getting started in IT">Início em TI</h3>
+            <span class="tl-period">Ago 2018 — Nov 2019</span>
+          </div>
+          <div class="tl-meta"><span class="co">Decodificar · Farias Brito</span><span>Fortaleza/CE</span></div>
+          <ul class="tl-list">
+            <li data-pt="Estagiário de suporte na Decodificar: análise de tickets, documentação e instalação de sistemas." data-en="Support intern at Decodificar: ticket analysis, documentation and system installs.">Estagiário de suporte na Decodificar: análise de tickets, documentação e instalação de sistemas.</li>
+            <li data-pt="Estagiário de informática na Organização Educacional Farias Brito: software desktop, tablets e laboratório." data-en="IT intern at Organização Educacional Farias Brito: desktop software, tablets and lab management.">Estagiário de informática na Organização Educacional Farias Brito: software desktop, tablets e laboratório.</li>
           </ul>
         </div>
       </div>
@@ -302,7 +528,7 @@
     <div class="edu-card reveal" data-d="1">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg></div>
       <div>
-        <h4 data-pt="Bacharelado em Ciências da Computação" data-en="B.Sc. in Computer Science">Bacharelado em Ciências da Computação</h4>
+        <h4 data-pt="Bacharelado em Ciências da Computação · concluído" data-en="B.Sc. in Computer Science · completed">Bacharelado em Ciências da Computação · concluído</h4>
         <div class="where">Centro Universitário Farias Brito</div>
       </div>
       <span class="when">2018 — 2025</span>
@@ -310,94 +536,24 @@
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
-<section id="projetos">
-  <div class="wrap">
-    <div class="sec-label reveal"><span class="idx">04</span> / <span data-pt="PROJETOS" data-en="PROJECTS">PROJETOS</span></div>
-    <h2 class="sec-title reveal" data-d="1" data-pt="Projetos em destaque" data-en="Featured projects">Projetos em destaque</h2>
-    <p class="sec-intro reveal" data-d="1" data-pt="Uma seleção entre 50+ repositórios — de apps Flutter em Clean Architecture a automação de QA." data-en="A selection from 50+ repositories — from Clean-Architecture Flutter apps to QA automation." style="margin-bottom:40px">Uma seleção entre 50+ repositórios — de apps Flutter em Clean Architecture a automação de QA.</p>
-
-    <div class="proj-grid">
-      <article class="proj feat reveal" data-d="1">
-        <div class="proj-top">
-          <span class="proj-type">Mobile · Flutter</span>
-          <a class="proj-ico" href="https://github.com/davinegreiiros/agendamento-app-pet" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <h3>Agenda Pet Saúde</h3>
-        <div class="proj-repo">github.com/davinegreiiros/agendamento-app-pet</div>
-        <p data-pt="App de agendamento e cuidados para pets construído em Clean Architecture com BLoC e tratamento de erros funcional via dartz (Either). Autenticação por e-mail e social, CRUD completo de pets e navegação declarativa com rotas centralizadas." data-en="A pet scheduling &amp; care app built in Clean Architecture with BLoC and functional error handling via dartz (Either). Email &amp; social auth, full pet CRUD and declarative routing with centralized routes.">App de agendamento e cuidados para pets construído em Clean Architecture com BLoC e tratamento de erros funcional via dartz (Either). Autenticação por e-mail e social, CRUD completo de pets e navegação declarativa com rotas centralizadas.</p>
-        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">BLoC</span><span class="chip">Clean Architecture</span><span class="chip">dartz</span></div>
-      </article>
-
-      <article class="proj feat reveal" data-d="2">
-        <div class="proj-top">
-          <span class="proj-type">iOS · Swift</span>
-          <a class="proj-ico" href="https://github.com/davinegreiiros/PomodoroQuest" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <h3>PomodoroQuest</h3>
-        <div class="proj-repo">github.com/davinegreiiros/PomodoroQuest</div>
-        <p data-pt="Timer Pomodoro com uma camada de RPG retrô: cada foco concluído rende XP e sobe o nível do herói. Live Activity na Dynamic Island, notificações locais e áudio chiptune — em SwiftUI, @Observable e Clean Architecture." data-en="A Pomodoro timer with a retro RPG layer: each finished focus earns XP and levels up the hero. Live Activity on the Dynamic Island, local notifications and chiptune audio — in SwiftUI, @Observable and Clean Architecture.">Timer Pomodoro com uma camada de RPG retrô: cada foco concluído rende XP e sobe o nível do herói. Live Activity na Dynamic Island, notificações locais e áudio chiptune — em SwiftUI, @Observable e Clean Architecture.</p>
-        <div class="proj-tech"><span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Live Activity</span><span class="chip">Clean Architecture</span></div>
-      </article>
-
-      <article class="proj reveal" data-d="1">
-        <div class="proj-top">
-          <span class="proj-type">Mobile · Flutter</span>
-          <a class="proj-ico" href="https://github.com/davinegreiiros/sas_barber" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <h3>BarberSaaS</h3>
-        <div class="proj-repo">/sas_barber</div>
-        <p data-pt="SaaS de gestão de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards de auth e tema Material 3." data-en="A barbershop management SaaS with client / barber / admin roles, Dio with JWT auto-refresh, GoRouter auth guards and Material 3 theming.">SaaS de gestão de barbearias com papéis cliente / barbeiro / admin, Dio com JWT e auto-refresh, GoRouter com guards de auth e tema Material 3.</p>
-        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">BLoC</span><span class="chip">GoRouter</span><span class="chip">Dio</span><span class="chip">get_it</span></div>
-      </article>
-
-      <article class="proj reveal" data-d="2">
-        <div class="proj-top">
-          <span class="proj-type">QA · Automação</span>
-          <a class="proj-ico" href="https://github.com/davinegreiiros/cypress-basico-v2" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <h3>Cypress E2E</h3>
-        <div class="proj-repo">/cypress-basico-v2</div>
-        <p data-pt="Automação de testes end-to-end com comandos customizados, boas práticas e cenários reais de teste web — o lado QA da minha engenharia." data-en="End-to-end test automation with custom commands, best practices and real-world web scenarios — the QA side of my engineering.">Automação de testes end-to-end com comandos customizados, boas práticas e cenários reais de teste web — o lado QA da minha engenharia.</p>
-        <div class="proj-tech"><span class="chip">Cypress</span><span class="chip">JavaScript</span><span class="chip">E2E</span></div>
-      </article>
-
-      <article class="proj reveal" data-d="3">
-        <div class="proj-top">
-          <span class="proj-type">Mobile · Flutter</span>
-          <a class="proj-ico" href="https://github.com/davinegreiiros/projeto-app-despesas" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <h3>Expenses</h3>
-        <div class="proj-repo">/projeto-app-despesas</div>
-        <p data-pt="App de controle de despesas pessoais em Flutter: registro de transações, categorização e visualização de gastos em gráficos." data-en="A personal expense tracker in Flutter: transaction logging, categorization and spending visualized in charts.">App de controle de despesas pessoais em Flutter: registro de transações, categorização e visualização de gastos em gráficos.</p>
-        <div class="proj-tech"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Charts</span></div>
-      </article>
-    </div>
-
-    <p class="reveal" style="margin-top:28px;font-family:var(--font-mono);font-size:13px;color:var(--txt-3)">
-      <a href="https://github.com/davinegreiiros?tab=repositories" target="_blank" rel="noopener" style="color:var(--acc)">→ <span data-pt="ver todos os repositórios no GitHub" data-en="see all repositories on GitHub">ver todos os repositórios no GitHub</span></a>
-    </p>
-  </div>
-</section>
-
 <!-- ============ CONTACT ============ -->
 <section id="contato" class="contact">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="idx">05</span> / <span data-pt="CONTATO" data-en="CONTACT">CONTATO</span></div>
-    <h2 class="contact-title reveal" data-d="1" data-pt="Vamos construir<br>algo de qualidade." data-en="Let's build<br>something solid.">Vamos construir<br>algo de qualidade.</h2>
-    <p class="contact-sub reveal" data-d="2" data-pt="Aberto a oportunidades como Desenvolvedor Mobile Flutter. Bora conversar?" data-en="Open to Flutter Mobile Developer opportunities. Let's talk?">Aberto a oportunidades como Desenvolvedor Mobile Flutter. Bora conversar?</p>
+    <div class="sec-label reveal"><span class="idx">06</span> / <span data-pt="CONTATO" data-en="CONTACT">CONTATO</span></div>
+    <h2 class="contact-title split-words" data-split data-pt="Vamos construir<br>algo de qualidade." data-en="Let's build<br>something solid.">Vamos construir<br>algo de qualidade.</h2>
+    <p class="contact-sub reveal" data-d="2" data-pt="Aberto a vagas de Desenvolvedor Flutter e times que valorizam full stack e processo. Bora conversar?" data-en="Open to Flutter Developer roles and teams that value full stack and process. Let's talk?">Aberto a vagas de Desenvolvedor Flutter e times que valorizam full stack e processo. Bora conversar?</p>
     <div class="contact-actions reveal" data-d="3">
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">
+      <a class="btn btn-primary magnetic" href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.7 1.8-1.7 1.7.8 1.7 1.7-.7 1.8-1.7 1.8zm13.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.8c1.4-2.6 7-2.8 7 2.5v6.7z"/></svg>
         LinkedIn
       </a>
-      <a class="btn btn-outline" href="https://github.com/davinegreiiros" target="_blank" rel="noopener">
+      <a class="btn btn-outline magnetic" href="https://github.com/davinegreiiros" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.6 0-12 5.4-12 12 0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2C5.7 21.8 5 19.7 5 19.7c-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12c0-6.6-5.4-12-12-12z"/></svg>
         GitHub
       </a>
-      <a class="btn btn-ghost" href="uploads/Curriculo_Davi_Flutter_Vaga.pdf" target="_blank" rel="noopener">
+      <a class="btn btn-ghost magnetic" href="uploads/Curriculo_DaviNegreiros_2026.pdf" target="_blank" rel="noopener" data-cursor="CV">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
-        <span data-pt="Currículo (PDF)" data-en="Resume (PDF)">Currículo (PDF)</span>
+        <span data-pt="Currículo 2026 (PDF)" data-en="Resume 2026 (PDF)">Currículo 2026 (PDF)</span>
       </a>
     </div>
   </div>
@@ -407,7 +563,7 @@
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="wrap footer-inner">
-    <div class="col" data-pt="Projetado &amp; codado em Fortaleza/CE · Flutter + ☕" data-en="Designed &amp; coded in Fortaleza/BR · Flutter + ☕">Projetado &amp; codado em Fortaleza/CE · Flutter + ☕</div>
+    <div class="col" data-pt="Projetado &amp; codado em Fortaleza/CE · Flutter + Next.js + ☕" data-en="Designed &amp; coded in Fortaleza/BR · Flutter + Next.js + ☕">Projetado &amp; codado em Fortaleza/CE · Flutter + Next.js + ☕</div>
     <div class="col links">
       <a href="https://github.com/davinegreiiros" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/davi-negreiros-31b942286/" target="_blank" rel="noopener">LinkedIn</a>
@@ -419,6 +575,7 @@
 
 <!-- ============ SCRIPTS ============ -->
 <script type="module" src="/src/app.js"></script>
+<script type="module" src="/src/motion.js"></script>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>

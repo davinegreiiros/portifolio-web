@@ -21,6 +21,7 @@
     localStorage.setItem(LANG_KEY, l);
     startTyped();     // restart role typer in new language
     startTerminal();  // re-render terminal
+    document.dispatchEvent(new CustomEvent('langchange', { detail: l }));
   }
 
   document.querySelectorAll('.lang-toggle button').forEach((b) => {
@@ -83,8 +84,8 @@
 
   /* ---------- typed role rotator ---------- */
   const ROLES = {
-    pt: ['Desenvolvedor Mobile Flutter', 'Especialista em QA & Automação', 'Clean Architecture + BLoC', 'Mobile · iOS · Android · Web'],
-    en: ['Flutter Mobile Developer', 'QA & Test Automation Specialist', 'Clean Architecture + BLoC', 'Mobile · iOS · Android · Web'],
+    pt: ['Desenvolvedor Flutter', 'Full stack: Flutter + Next.js', 'Spec Driven Development', 'Clean Architecture + BLoC/Cubit', 'Dev com olhar de QA'],
+    en: ['Flutter Developer', 'Full stack: Flutter + Next.js', 'Spec Driven Development', 'Clean Architecture + BLoC/Cubit', 'Dev with a QA mindset'],
   };
   let typedTimer = null;
   function startTyped() {
@@ -108,21 +109,23 @@
   const TERMINAL = {
     pt: [
       { t: 'cmd', txt: '<span class="prompt">davi@portfolio</span> <span class="prompt">~</span> $ ', type: 'whoami --stack' },
-      { t: 'out', txt: '<span class="out">role</span>     <span class="key">"Desenvolvedor Mobile Flutter"</span>' },
-      { t: 'out', txt: '<span class="out">edge</span>     <span class="str">"Dev + QA · qualidade desde a base"</span>' },
-      { t: 'out', txt: '<span class="out">stack</span>    [ <span class="key">Flutter</span>, <span class="key">Dart</span>, <span class="key">BLoC</span>, <span class="key">GraphQL</span> ]' },
-      { t: 'out', txt: '<span class="out">since</span>    <span class="str">2021</span>  ·  <span class="out">base</span> <span class="str">Fortaleza/CE</span>' },
+      { t: 'out', txt: '<span class="out">role</span>     <span class="key">"Desenvolvedor Flutter · Full Stack"</span>' },
+      { t: 'out', txt: '<span class="out">mobile</span>   [ <span class="key">Flutter</span>, <span class="key">Dart</span>, <span class="key">BLoC</span>, <span class="key">Cubit</span> ]' },
+      { t: 'out', txt: '<span class="out">backend</span>  [ <span class="key">Next.js</span>, <span class="key">TypeScript</span>, <span class="key">MongoDB</span> ]' },
+      { t: 'out', txt: '<span class="out">method</span>   <span class="str">"SDD · spec → plan → tasks → code"</span>' },
       { t: 'cmd', txt: '<span class="prompt">davi@portfolio</span> <span class="prompt">~</span> $ ', type: 'ls ~/projetos' },
-      { t: 'out', txt: '<span class="key">agenda-pet</span>  <span class="key">pomodoro-quest</span>  <span class="key">barber-saas</span>' },
+      { t: 'out', txt: '<span class="key">sonho-de-crianca/</span>  <span class="key">painel-logistico/</span>  <span class="key">sadah/</span>' },
+      { t: 'out', txt: '<span class="out">└─</span> <span class="str">app</span> <span class="out">+</span> <span class="str">api</span> <span class="out">· 40 specs</span>' },
     ],
     en: [
       { t: 'cmd', txt: '<span class="prompt">davi@portfolio</span> <span class="prompt">~</span> $ ', type: 'whoami --stack' },
-      { t: 'out', txt: '<span class="out">role</span>     <span class="key">"Flutter Mobile Developer"</span>' },
-      { t: 'out', txt: '<span class="out">edge</span>     <span class="str">"Dev + QA · quality from the ground up"</span>' },
-      { t: 'out', txt: '<span class="out">stack</span>    [ <span class="key">Flutter</span>, <span class="key">Dart</span>, <span class="key">BLoC</span>, <span class="key">GraphQL</span> ]' },
-      { t: 'out', txt: '<span class="out">since</span>    <span class="str">2021</span>  ·  <span class="out">base</span> <span class="str">Fortaleza/BR</span>' },
+      { t: 'out', txt: '<span class="out">role</span>     <span class="key">"Flutter Developer · Full Stack"</span>' },
+      { t: 'out', txt: '<span class="out">mobile</span>   [ <span class="key">Flutter</span>, <span class="key">Dart</span>, <span class="key">BLoC</span>, <span class="key">Cubit</span> ]' },
+      { t: 'out', txt: '<span class="out">backend</span>  [ <span class="key">Next.js</span>, <span class="key">TypeScript</span>, <span class="key">MongoDB</span> ]' },
+      { t: 'out', txt: '<span class="out">method</span>   <span class="str">"SDD · spec → plan → tasks → code"</span>' },
       { t: 'cmd', txt: '<span class="prompt">davi@portfolio</span> <span class="prompt">~</span> $ ', type: 'ls ~/projects' },
-      { t: 'out', txt: '<span class="key">agenda-pet</span>  <span class="key">pomodoro-quest</span>  <span class="key">barber-saas</span>' },
+      { t: 'out', txt: '<span class="key">sonho-de-crianca/</span>  <span class="key">painel-logistico/</span>  <span class="key">sadah/</span>' },
+      { t: 'out', txt: '<span class="out">└─</span> <span class="str">app</span> <span class="out">+</span> <span class="str">api</span> <span class="out">· 40 specs</span>' },
     ],
   };
   let termTimer = null;
